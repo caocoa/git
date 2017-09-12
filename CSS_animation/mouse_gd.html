@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标效果</title>
+		<style type="text/css">
+			div{
+			/*边框圆角度*/
+		     border-radius:30%;
+		     /*文本居中*/
+		     text-align:center;
+		     /*宽高*/
+		     width:100px;
+		     height:100px;
+		     /*背景颜色*/
+		     background:yellow;
+		     /*过度效果，可以简写成 all 2s*/
+		     transition:width 2s,height 2s,background 2s,transform 2s;
+		     /*兼容性*/
+		     -webkit-transition:width 2s,height 2s,background 2s,transform 2s;
+		     -moz-transition:width 2s,height 2s,background 2s,transform 2s; /* Firefox 4 */
+		     -ms-transition:width 2s,height 2s,background 2s,transform 2s; /* Safari and Chrome */
+		     -o-transition:width 2s,height 2s,background 2s,transform 2s; /* Opera */
+		     }
+		     /*
+		      * transition属性的参数：
+		      *  1）.哪个属性需要应用过渡效果
+			  *  2）.该属性过渡时间；多个属性与时间之间用逗号隔开，当所有属性都应用过渡效果并且过渡时间相同时（如上例）如：
+     		  *transition:all 2s;
+     		  * 
+     		  *div:hover是特殊的选择器，hover表示悬停事件，当div元素被悬停时才会应用该样式，悬停结束后会回到原来的样式。*/
+		     div:hover{
+			    width:184px;
+			    height:300px;
+			    background:url(img/shouzhi.jpg);
+			    text-align: center;
+			    transform:rotate(360deg);
+			    -ms-transform:rotate(9deg); /* Internet Explorer */
+			    -moz-transform:rotate(9deg); /* Firefox */
+			    -webkit-transform:rotate(9deg); /* Safari 和 Chrome */
+			    /*-o-transform:rotate(9deg); /* Opera */*/
+			   	animation-delay:5s ;
+			    animation: go 10s infinite;
+		     }
+		    @-webkit-keyframes go{
+				0%{transform: rotateX(0);}
+				25%{transform: rotateX(60deg);}
+				50%{transform: rotateX(100deg);}
+				75%{transform: rotateY(120deg);}
+				100%{transform: rotateY(150deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div>鼠标</div>
+	</body>
+</html>

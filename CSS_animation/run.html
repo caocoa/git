@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<!--在head中我们可以指定页面的编码方式，标题，css样式，以及js-->
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.runMan{
+				width: 1000px;
+				height: 1500px;
+				/*左右设置anto就会居显示*/
+				margin: 100px auto;
+				/*no-repeat ：不平铺*/
+				background: url(img/kai_running.png) no-repeat ;
+				/*初始位置*/
+				background-position: -33px 0;
+				/*添加动画效果*/
+				/*动画方法*/
+				-webkit-animation-name: run;				
+				/*执行的次数*/
+				-webkit-animation-iteration-count: infinite ;
+				/*马上调到动画结束帧的状态（没有过度的效果而是一帧帧的变化）*/
+				-webkit-animation-timing-function: step-end;
+				/*动画间隔的时间*/
+				-webkit-animation-duration: 1s;
+				/*延迟2s*/
+				-webkit-animation-delay: 3s;				
+			}
+			/*原点是不会动，移动的是图片
+			 * X坐标为正，图片左上角向右平移
+			 * 为负，图片左上角向左平移
+			 * Y坐标为正，图片向下平移，为负向上平移
+			 * 
+			 *每次位置移动180
+			 * 
+			 */
+			
+			@-webkit-keyframes run{
+				0%{background-position: -33px 0px;}
+				5.3%{background-position: -213px 0px;}
+				10.6%{background-position: -393px 0px;}
+				15.9%{background-position: -573px 0px;}
+				21.2%{background-position: -753px 0px;}
+				26.5%{background-position: -933px 0px;}
+				31.8%{background-position: -1113px 0px;}
+				37.1%{background-position: -1293px 0px;}
+				42.4%{background-position: -1473px 0px;}
+				47.7%{background-position: -1653px 0px;}
+				53%{background-position: -1833px 0px;}
+				58.3%{background-position: -2013px 0px;}
+				63.6%{background-position: -2193px 0px;}
+				68.9%{background-position: -2373px 0px;}
+				74.2%{background-position: -2553px 0px;}
+				79.5%{background-position: -2733px 0px;}
+				84.8%{background-position: -2913px 0px;}
+				90.1%{background-position: -3093px 0px;}
+				95.4%{background-position: -3273px 0px;}
+				100%{background-position: -33px 0px;}
+			
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="runMan">
+			 
+		</div>
+	</body>
+</html>
