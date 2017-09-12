@@ -1,0 +1,20 @@
+Git SVN
+设定名字和邮箱
+ git config --global user.name""
+ git config --global user.email"2369235022@qq.com"
+--global   对所有仓库进行修改
+初始化版本库  Git init
+查看当前目录内容 ls
+查看隐藏内容 ls -ah
+添加文件到仓库 1.git add 文件名                       提交到缓存区
+               2.git commit -m “本次提交的说明”     将缓存区的文件全部提交到版本库
+查看文本库状态  git status
+查看文件详细地改变   git diff
+查看历史记录   git log       git log --pretty=oneline
+版本回退    git reset --hard HEAD^回退1版本
+            git reset --hard HEAD^^回退2版本
+            git reset --hard HEAD~*回退*版本
+            git reset --hard 版本号    回退至某版本
+head'指针只指向版本库
+查看commit id   git reflog
+查看文件中具体内容  cat 文件名
