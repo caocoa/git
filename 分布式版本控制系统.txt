@@ -18,3 +18,9 @@ Git SVN
 head'指针只指向版本库
 查看commit id   git reflog
 查看文件中具体内容  cat 文件名
+撤销修改指令   git checkout -- 文件名     从工作区撤销修改
+               git reset HEAD 文件名      将缓存区文件撤回工作区
+删除文档   rm 文件名    从工作区删除文档
+           git rm 文件名   从版本库中删去文档
+ git remote add origin https://github.com/caocoa/git.git    链接本地库和网络
+ git push -u origin master   将本地库上传到网上
