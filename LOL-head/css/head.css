@@ -1,0 +1,202 @@
+/*id选择器用#*/
+#headerBox{
+	width: 100%;
+	height: 90px;
+	background-color: #0b0b0b;
+}
+.header{
+	width: 1240px;
+	height: 90px;
+	margin: 0 auto;
+	/*定位，相对定位*/
+	position: relative;
+}
+.logo{
+	width: 190px;
+	height: 100px;
+	background: url(../img/spr-v2.png) no-repeat 0 -30px;
+	/*向左浮动*/
+	float: left;
+	/*绝对定位*/
+	position: absolute;
+	left: o;
+	/*z值越大越向上层显示*/
+	z-index: 99;
+}
+.nav{
+	width: 600px;
+	height: 90px;
+	float: left;
+	margin-left: 185px;	
+}
+.nav li{
+	float: left;
+	width: 120px;
+	/*文本居中*/
+	text-align: center;
+}
+.nav li a{
+	/*将a变为块级元素*/
+	display: block;
+	color: #fafafa;
+	/*字体大小*/
+	font-size: 18px;
+	margin-top: 30px;
+}
+.nav li a span{
+	display: block;
+	color: #838374;
+	transform: scale(0.6);
+}
+.go{
+	float: left;
+	width: 94px;
+	height: 90px;	
+}
+.go a{
+	float: left;
+	width: 30px;
+	height: 30px;
+	background: url(../img/spr-v2.png) no-repeat;
+	margin-right: 17px;
+	margin-top:30px ;
+}
+/*同类子元素选择*/
+.go a:nth-child(1){
+	background-position: -8px 0;
+}
+.go a:nth-child(2){
+	background-position: -44px 0;
+}
+.user{
+	width: 350px;
+	height: 90px;
+	float: right;
+	position: relative;
+}
+.usersection{
+	width: 350px;
+	height: 90px;
+}
+.usersection div,.usersection i{
+	float: left;	
+}
+.usersection i{
+	width: 73px;
+	height: 73px;
+	margin-top: 8px;
+	margin-left: 20px;
+	position: relative;
+}
+.usersection i b{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 99;
+	width: 73px;
+	height: 73px;
+	background: url(../img/spr-v2.png) no-repeat;
+	background-position: -1px -169px;
+}
+.usersection i img{
+	width: 100%;
+	/*方形背景变圆-元角度*/
+	border-radius: 50%;
+}
+.usersection div{
+	width: 230px;
+	margin-left: 20px;	
+}
+.usersection div h1{
+	font-size: 16px;
+	color: #f6f6f6;
+	/*字体宽度*/
+	font-weight: 100;
+	margin-top: 25px;
+}
+.usersection div h1 a{
+	color: blanchedalmond;
+	text-decoration: underline;
+}
+.usersection div p{
+	color: #999;
+	margin-top: 3px;
+}
+.user:hover .usersection{
+	background: rgba(27,27,27,0.9);
+}
+.userselect{
+	position: absolute;
+	width: 350px;
+	height: 114px;
+	background: rgba(27,27,27,0.9);
+	color: #868686;
+	font-size: 14px;
+	top: 90px;
+	left: 0;
+	/*隐藏*/
+	display: none;
+	z-index: 99;
+}
+.userselect div{
+	padding: 20px 30px 0;
+	height: 78px;	
+}
+.userselect a{
+	display: block;
+	height: 36px;
+	text-align: center;
+	line-height: 36px;
+	background: #161413;
+	color: #e0e0e0;
+}
+.user:hover .userselect{
+	display: block;
+}
+/*隐藏部分*/
+.layer{
+	width: 100%;
+	height: 190px;
+	padding: 20px 0;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	top: 90px;
+	left: 0;
+	z-index: 88;
+	display: none;	
+}
+#box{
+	width: 1240px;
+	height: 190px;
+	margin: auto;
+}
+.box-list{
+	width: 600px;
+	height: 190px;
+	margin-left: 185px;
+}
+.box-list ul{
+	width: 120px;
+	float: left;
+	text-align: center;
+	line-height: 26px;
+}
+.box-list ul a{
+	color: #f5f5f5;
+	font-size: 14px;
+}
+.box-list ul a:hover{
+	color: blanchedalmond;
+}
+.box-list ul a i{
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	background: url(../img/spr-v2.png) no-repeat -107px 0;
+}
+.box-list ul a b{
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	background: url(../img/spr-v2.png) no-repeat -129px 0;
+}
