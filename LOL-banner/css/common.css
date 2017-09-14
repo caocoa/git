@@ -1,0 +1,24 @@
+/*通用选择器，清除默认内外边距*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	/*无序列表去点*/
+	list-style: none;
+}
+a{
+	/*去除超链接下划线*/
+	text-decoration: none;
+}
+b{
+	font-weight: 100;
+}
+body{
+	/*规定样式、尺寸、行高和字体*/
+	font: normal 12px/1.6em "微软雅黑",tahoma,simhei;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
