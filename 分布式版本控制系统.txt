@@ -6,7 +6,7 @@ Git SVN
 初始化版本库  Git init
 查看当前目录内容 ls
 查看隐藏内容 ls -ah
-添加文件到仓库 1.git add 文件名                       提交到缓存区
+添加文件到仓库 1.git add 文件名/.(.可以提交所有）     提交到缓存区
                2.git commit -m “本次提交的说明”     将缓存区的文件全部提交到版本库
 查看文本库状态  git status
 查看文件详细地改变   git diff
@@ -23,4 +23,8 @@ head'指针只指向版本库
 删除文档   rm 文件名    从工作区删除文档
            git rm 文件名   从版本库中删去文档
  git remote add origin https://github.com/caocoa/git.git    链接本地库和网络
- git push -u origin master   将本地库上传到网上
+ git push origin master   将本地库上传到网上
+ git clone "地址"  在本地克隆库
+ Ctrl+c 结束正在运行
+ git pull origin master   将网络库下载到本地
+ 作业提交流程：fork》clong》本地提交到库》new pull request
