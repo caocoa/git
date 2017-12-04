@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序表格</title>
+    <style>
+        table,tr,th,td{
+            border-collapse: collapse;
+            border:1px solid #3ae;
+        }
+        th,td{
+            padding: 10px;
+        }
+        a:visited{
+            color: #3ae;
+        }
+    </style>
+</head>
+<body>
+<!--<table>-->
+    <!--<tr>-->
+        <!--<th>Name</th>-->
+        <!--<th><a href="#">Height</a></th>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>Bob</td>-->
+        <!--<td>170</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>Cindy</td>-->
+        <!--<td>159</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>Andy</td>-->
+        <!--<td>165</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>Dart</td>-->
+        <!--<td>180</td>-->
+    <!--</tr>-->
+<!--</table>-->
+<script>
+    // 数据，用数组加对象的形式存放数据
+    var stuHeight = [
+        {name:'Andy',height:165},
+        {name:'Bob',height:170},
+        {name:'Cindy',height:158},
+        {name:'Dart',height:180}
+    ];
+
+    // 创建表头
+    function createTableHeader() {
+        var eleTr = document.createElement('tr');
+        var eleTh = document.createElement('th');
+        eleTh.innerHTML = 'Name';
+        eleTr.appendChild(eleTh);
+        eleTh = document.createElement('th');
+        var eleA = document.createElement('a');
+        eleA.href = '#';
+        eleA.innerHTML = 'Height';
+        eleA.onclick = sortToogle;
+        eleTh.appendChild(eleA);
+        eleTr.appendChild(eleTh);
+        return eleTr;
+    }
+    var isSheng = true;// true表示升序，false表示降序
+
+    // 排序toogle
+    function sortToogle() {
+        stuHeight.sort(sortFunction);
+        isSheng = !isSheng;
+        addTableToBody();
+    }
+    // 排序完善
+    function sortFunction(a,b){
+        if(isSheng){
+            return a.height - b.height;
+        }else{
+            return b.height - a.height;
+        }
+    }
+
+    // 创建数据行
+    function createDataRow(obj) {
+        var eleTr = document.createElement('tr');
+        var eleTd = document.createElement('td');
+        eleTd.innerHTML = obj.name;
+        eleTr.appendChild(eleTd);
+        eleTd = document.createElement("td");
+        eleTd.innerHTML = obj.height;
+        eleTr.appendChild(eleTd);
+        return eleTr;
+    }
+    // 拼装表格表头和数据行
+    function createTable() {
+        var eleTable = document.createElement('table');// 创建table
+        eleTable.appendChild(createTableHeader());// 表头添加到table里
+
+        stuHeight.forEach(function(item){
+            eleTable.appendChild(createDataRow(item));
+        });
+        return eleTable;
+    }
+    var currentTable;// 表示当前已存在的表格
+
+    // 向body里追加table
+    function addTableToBody(){
+        if(currentTable){
+            document.body.removeChild(currentTable);
+        }
+        currentTable = createTable();
+        document.body.appendChild(currentTable);
+    }
+    addTableToBody();
+
+</script>
+</body>
+</html>

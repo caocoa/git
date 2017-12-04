@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#kuang{
+				width: 500px;
+				height: 500px;
+				background: #3ae;
+				position: relative;
+			}
+			#kuai{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="kuang">
+			<div id="kuai"></div>
+		</div>
+		<script>
+			var kuang = document.querySelector('#kuang');
+			var kuai = document.querySelector('#kuai');
+			
+			kuang.onmousemove = function(event){
+				event = event ||window.event;
+				
+	
+				var x = event.clientX - this.offsetLeft - kuai.clientHeight/2;
+				var y = event.clientY - this.offsetTop - kuai.clientWidth/2;
+				
+				if(x<0){x=0;}
+				if(x>this.clientWidth-kuai.clientWidth){x=this.clientWidth-kuai.clientWidth;}
+				if(y<0){y=0;}
+				if(y>this.clientHeight-kuai.clientHeight){y=this.clientHeight-kuai.clientHeight;}
+				
+				kuai.style.top = y + 'px';
+				kuai.style.left = x + 'px';
+			}
+			
+//			function mouseWheelHandler(event){
+//				event = event || window.event;
+//				if(event.preventDefault){
+//					event.preventDefault();
+//				}else{
+//					event.returnValue = false;
+//				}
+//				
+//				if(event.wheelDelta){
+//					var direction = event.wheelDelta>0?1:-1;
+//				}else if(event.detail){
+//					var direction = event.wheelDelta>0?-1:1;
+//				}
+//				oDiv.innerHTML = direction
+//				
+//			}
+//			oDiv.onmousewheel = mouseWheelHandler;
+//			oDiv.addEventListener('DOMMouseWheel',mouseWheelHandler)
+		</script>
+	</body>
+</html>

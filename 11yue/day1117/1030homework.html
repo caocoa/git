@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1030作业</title>
+  <style>
+    ul{height: 300px;}
+    ul li{
+      list-style: none;
+      float: left;
+      color: #fff;
+      padding: 10px 15px;
+      margin: 0 50px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      position: relative;
+    }
+    
+    ul li section{
+      width: 500px;
+      height: 200px;
+      background-color: inherit;
+      position: absolute;
+      top: 40.67px;
+      display: none;
+    }
+    ul li:hover section{display: block;}
+    li:nth-child(1){
+      background-color: #0099e8;  
+    }
+    li:nth-child(1) section{
+      left: -33px;
+    }
+    li::before,li::after{
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: 0; 
+      display: none;
+    }
+    li:hover::before,li:hover::after{
+      display: block;
+    }
+    li:nth-child(1)::before{
+      left: -20px;
+      background-color: #0099e8;
+      background: -webkit-radial-gradient(0 0,circle,transparent,transparent 69%,#0099e8 69%,#0099e8);
+    }
+    li:nth-child(1)::after{
+      right: -20px;
+      background-color: #0099e8;
+      background: -webkit-radial-gradient(right top,circle,transparent,transparent 69%,#0099e8 69%,#0099e8);
+    }
+    li:nth-child(2){
+      background-color: #d84725;
+    }
+    li:nth-child(2) section{
+      left: -208px;
+    }
+    li:nth-child(3){
+      background-color: #088d4c; 
+    }
+    li:nth-child(3) section{
+      right: -29px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>HTML
+      <section></section>
+    </li>
+    <li>CSS
+      <section></section>
+    </li>
+    <li>Javascript
+      <section></section>
+    </li>
+  </ul>
+  <!--<style type="text/css">
+    header{
+      width: 600px;
+      height: 50px;
+      border: 1px solid #000;
+      background: linear-gradient(to right,
+      greenyellow,greenyellow 50%,transparent 50%,transparent);
+    }
+    footer{
+      width: 500px;
+      height: 300px;
+      border: 1px solid #000;
+      background: radial-gradient(circle,skyblue,skyblue 50%,transparent 50%,transparent);
+    }
+    nav{
+      width: 30px;
+      height: 30px;
+      background: -webkit-radial-gradient(100% 0,circle,transparent,transparent 69%,skyblue 69%,skyblue);/* 第一个参数位置：① 固定px ② 百分比，相对于该元素的宽高 ③ left right/top bottom/center */
+    }-->
+  <!--</style>
+  <header></header>
+  <br><br>
+  <footer></footer>
+  <br><br>
+  <nav></nav>-->
+</body>
+</html>

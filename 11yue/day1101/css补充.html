@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			article{
+				width: 100px;
+				height: 100px;
+				border: 2px solid #000;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;/*溢出文本处理clip切割、ellipsis省略号、string显示固定文本*/
+			}
+			p{
+				width: 10px;
+				height: 100px;
+				border: 2px solid #000;
+				word-wrap: break-word;
+				overflow: hidden;
+			}
+			header{
+				width: 100px;
+				height: 100px;
+				border: 2px solid #000;
+				resize: both;
+				overflow: auto;
+			}
+			section{
+				width: 300px;
+				height: 100px;
+				border: 1px solid #ccc;
+				overflow: auto;
+				resize: both;
+			}
+			section:focus{
+				outline: 1px solid #4bf;
+				box-shadow: 1px 1px 3px rgba(61,170,232,.5);
+			}
+			nav{
+				width: 100%;
+				border: 5px solid #000;
+				
+			}
+			nav div{
+				width: 40%;
+				height: 100px;
+				padding: 30px;
+				border: 5px solid red;
+				text-align: center;
+				line-height: 100px;
+				box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+		</article>
+		<p>
+			i have a dream for the world
+		</p>
+		<header>
+			喔曲尼麻辣隔壁
+		</header>
+		<section contenteditable="true"></section>
+		<nav>
+			<div>我是第一个div</div>
+			<div>我是第二个div</div>
+		</nav>
+	</body>
+</html>

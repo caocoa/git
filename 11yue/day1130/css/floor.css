@@ -1,0 +1,63 @@
+body{
+	margin: 0;
+}
+#content{
+	width: 1000px;
+	height: 900px;
+	margin: 0 auto;
+	background: #ccc;
+}
+.floor{
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto 10px;
+	background-color:yellowgreen ;
+	}
+.f1{
+	height: 390px;
+}
+.f2{
+	background-color: #3ae;
+}
+
+aside{
+	width: 60px;
+	position: fixed;
+	left: 10px;
+	bottom: 100px;
+}
+aside ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+aside ul li{
+	width: 60px;
+	height: 60px;
+	background-color: #ccc;
+}
+aside ul li a{
+	display: block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	text-decoration: none;
+	font-size: 14;
+}
+aside ul li a.number{
+	display: block;
+}
+aside ul li a.chinese{
+	display: none;
+	color: #fff;
+}
+aside ul li.cur{
+	background: rgb(111,0,0);
+}
+aside ul li.cur a.number{
+	display: none;
+}
+aside ul li.cur a.chinese{
+	display: block;
+}

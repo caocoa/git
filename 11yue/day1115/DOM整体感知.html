@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+<header>哈哈哈1</header>
+<header>哈哈哈2</header>
+<header>哈哈哈3</header>
+<div id="haha">2333</div>
+<span class="smaspan">span1</span>
+<span class="smaspan">span2</span>
+<span class="smaspan">span3</span>
+<span class="smaspan">span4</span>
+
+<ul>
+    <li class="licase"></li>
+    <li class="licase"></li>
+    <li class="licase"></li>
+    <li class="licase"></li>
+    <li class="licase"></li>
+    <li></li>
+</ul>
+<script>
+
+//    console.log(document);// html结构骨架
+//    console.dir(document);// document对象上的属性和方法
+    var oHeaders = document.getElementsByTagName("header");// 数组
+    console.log(oHeaders);
+
+    console.log(document.getElementById("haha"));
+
+    var oSpans = document.getElementsByClassName("smaspan");// 数组
+    console.log(oSpans);
+
+    var oLis = document.querySelector("#haha");// 参数只要符合css选择器语法即可
+    console.log(oLis);
+
+    var good = document.querySelectorAll("ul li");
+    console.log(good);
+
+
+    console.log(document.body.style);
+
+</script>
+</body>
+</html>

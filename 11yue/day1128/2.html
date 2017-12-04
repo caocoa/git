@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 400px;
+				height: 400px;
+				background-color: #00008B;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			var oDiv = document.querySelector('div');
+			oDiv.addEventListener('click',function(ev){
+				console.log(ev.screenX,ev.screenY);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结合数组观察闭包</title>
+</head>
+<body>
+<script>
+    var arr = [];
+
+//    for(var i = 1; i <= 5;i++){
+//        arr[i] = function(){
+//            alert(i);
+//        }
+//    }
+
+    for(var i = 1; i <= 5;i++){
+        (function (m) {
+            arr[m] = function () {
+                alert(m);
+            }
+        })(i);
+    }
+
+    arr[2](); // 2
+    arr[4](); // 4
+    arr[5](); // 5
+</script>
+</body>
+</html>

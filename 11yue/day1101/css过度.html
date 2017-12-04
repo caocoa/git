@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title>css过度</title>
+		<style>
+			header{
+			width: 100px;
+			height: 100px;
+			background-color: rgba(255,0,0,.5);
+			border: 2px solid red;
+			/*transition-property: width height;*/
+			/*transition-duration: 1000ms;毫秒或秒*/
+			/*transition-timing-function: ease-in-out;/* linear/ease/ease-in/ease-out/ease-in-out */*/
+			/*transition-delay: 1s;*/
+			transition: all,1000ms,ease,1s;
+			}
+			header:hover{
+				width: 150px;
+				height: 150px;
+				background-color: rgba(0,255,0,.8);
+				border: 3px dashed #f10180;
+				color: #fff;
+				
+			
+			}
+			section{
+				width: 800px;
+				height: 500px;
+				background-color: #acd247;
+				margin: 0 auto;
+				position: relative;
+			}
+			article{
+				width: 200px;
+				height: 200px;
+				background-color: #456789;
+				transition: all,1000ms;
+				position:absolute;
+			}
+			article:hover{
+				/*margin-left: 400px;*/
+				top: 200px;
+				left: 200px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			终于可以做简单的动画啦
+		</header>
+		<section>
+			
+			<article>
+				
+			</article>
+		</section>
+	</body>
+</html>

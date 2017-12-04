@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr = [23,13,34,5,81,9,69,10];
+			for(i=0;i<arr.length;i++){
+				var max = arr[i];
+				for(j=0;j<arr.length;j++){
+					if(max<arr[j]){
+						max = arr[j];
+						arr[j] = arr[i];
+						arr[i] = max;
+					}
+					
+				}
+			}
+			console.log(arr);
+		</script>
+	</body>
+</html>

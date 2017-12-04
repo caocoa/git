@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var num = parseInt(prompt("请输入一个数字"));
+			var n = 0;
+			for(j = 1; j <= num; j++) {
+				if(num % j == 0) {
+					n++;
+				}
+
+			}
+			if(n == 2) {
+				console.log(num + "是质数");
+			} else {
+				console.log(num + "不是质数");
+			}
+		</script>
+	</body>
+
+</html>

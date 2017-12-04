@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			function putstar(n) {
+
+				for(i = 1; i < n; i++) {
+					var space = "";
+					var star = "";
+					for(j = n - i; j > 0; j--) {
+						space += " ";
+					}
+					for(k = 0; k < 2 * i - 1; k++) {
+						star += "*";
+					}
+					space += star;
+					console.log(space + "\n");
+				}
+			}
+			putstar(5);
+		</script>
+	</body>
+
+</html>

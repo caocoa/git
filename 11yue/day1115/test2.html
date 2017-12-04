@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button class="big">加大</button>
+		<button class="small">减小</button>
+		<p>随便输点什么</p>
+		<script>
+			var oP = document.querySelector("p");
+			var oBig = document.getElementsByClassName("big");
+			var oSmall =document.getElementsByClassName("small");
+			(function () {
+            oBig.onclick = function () {
+                document.querySelector("p").style.fontSize = "larger";
+            }
+           }();
+            oSmall.onclick = function () {
+                oP.style.fontSize = "10px";
+            }
+        
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .haha{
+            width: 100px;
+            background-color: #000;
+        }
+        .hello{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="haha" title="nihao">haha</div>
+<script>
+    var oDiv = document.querySelector("div");
+
+    oDiv.className += " hello";
+    console.log(oDiv.classList.value);// classList存放的是所有添加上的类名（数组）
+    document.body.appendChild(oDiv);
+
+    oDiv.setAttribute("hao","good");//设置属性
+    oDiv.removeAttribute("hao");// 移除属性
+    console.log(oDiv.getAttribute("hao"));// 得到属性
+</script>
+</body>
+</html>

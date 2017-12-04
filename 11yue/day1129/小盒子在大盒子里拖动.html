@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小盒子在大盒子里拖动</title>
+  <style>
+    header{
+      width: 500px;
+      height: 500px;
+      border: 1px solid #000;
+      position: relative;
+    }
+    section{
+      width: 80px;
+      height: 80px;
+      background-color: #3ae;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <section></section>
+  </header>
+  <script>
+    var oHeader = document.querySelector('header');
+    var oSection = document.querySelector('section');
+
+    oSection.onmousedown = function(event){
+      event = event || window.event;
+
+      var deltaX = event.clientX - this.offsetLeft;
+      var deltaY = event.clientY - this.offsetTop;
+
+      oHeader.onmousemove = function (ev) {
+        ev = ev || window.event;
+        // 最终赋给业务代码的数值，clientX - deltaX
+        var x = ev.clientX - deltaX;
+        var y = ev.clientY - deltaY;
+        // 吸附功能  空间（距边界10px时）
+        if(x <= 10){x = 0;}
+        if(y <= 10){y = 0;}
+        if(x > oHeader.clientWidth - oSection.clientWidth - 10){x = oHeader.clientWidth - oSection.clientWidth;}
+        if(y > oHeader.clientHeight - oSection.clientHeight - 10){y = oHeader.clientHeight - oSection.clientHeight;}
+
+        // 赋给业务代码
+        oSection.style.left = x + 'px';
+        oSection.style.top = y + 'px';
+      };
+    };
+    // 监听在document上的鼠标抬起事件
+    document.onmouseup = function(){
+      oHeader.onmousemove = null;
+    };
+  </script>
+</body>
+</html>

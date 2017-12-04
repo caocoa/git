@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>1</div>
+<script>
+    var oDiv = document.querySelector("div");
+    console.log(oDiv.style);
+
+//    oDiv.style.width = "100px";
+//    oDiv.style.height = "100px";
+//    oDiv.style.backgroundColor = "#123456";
+//    oDiv.style.border = "3px solid #abcdef";
+//    oDiv.style.position = "position";
+//    oDiv.style.transition = "all 1s";
+    oDiv.style.cssText = "width: 100px; " +
+        "height: 100px; " +
+        "background-color: rgb(18, 52, 86); " +
+        "border: 3px solid rgb(171, 205, 239); " +
+        "transition: all 1s;";
+    oDiv.onclick = function () {
+        oDiv.style.width = "200px";
+        oDiv.style.height = "150px";
+        oDiv.style.backgroundColor = "#f60";
+        oDiv.style.border = "3px double #fedcba";
+        oDiv.style.top = "30px";
+        oDiv.style.left = "30px";
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片移动</title>
+    <style>
+        img{
+            width: 500px;
+            height: 314px;
+            position: absolute;
+            top: 200px;
+            left: 400px;
+        }
+        button{
+            width: 50px;
+            height: 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px;
+            border: 2px solid #3ae;
+            background-color: #3ae;
+            transition: all 1s;
+            outline: none;
+        }
+        button:hover{
+            color: #3ae;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<button>↖</button>
+<button>↑</button>
+<button>↗</button>
+<br>
+<button>←</button>
+<button>重置</button>
+<button>→</button>
+<br>
+<button>↙</button>
+<button>↓</button>
+<button>↘</button>
+<img src="img/ndb-ficon-c.png" alt="">
+<script>
+    var oImg = document.querySelector("img");
+    var oButtons = document.querySelectorAll("button");
+
+    var topNum = 200,leftNum = 400;
+
+    function styleHandler(ele,styleName,styleValue) {
+        for(var i = 0;i < styleName.length; i++){
+            ele.style[styleName[i]] = styleValue[i] + "px";
+        }
+    }
+    oButtons[0].onclick = function () {
+        topNum -= 10;
+        leftNum -= 10;
+        styleHandler(oImg,['top','left'],[topNum,leftNum]);
+    };
+    oButtons[1].onclick = function () {
+        topNum -= 10;
+        styleHandler(oImg,['top'],[topNum]);
+    };
+    oButtons[2].onclick = function () {
+        topNum -= 10;
+        leftNum += 10;
+        styleHandler(oImg,['top','left'],[topNum,leftNum]);
+    };
+    oButtons[3].onclick = function () {
+        leftNum -= 10;
+        styleHandler(oImg,['left'],[leftNum]);
+    };
+    oButtons[4].onclick = function () {
+        styleHandler(oImg,['top','left'],[200,400]);
+    };
+    oButtons[5].onclick = function () {
+        leftNum += 10;
+        styleHandler(oImg,['left'],[leftNum]);
+    };
+    oButtons[6].onclick = function () {
+        topNum += 10;
+        leftNum -= 10;
+        styleHandler(oImg,['top','left'],[topNum,leftNum]);
+    };
+    oButtons[7].onclick = function () {
+        topNum += 10;
+        styleHandler(oImg,['top'],[topNum]);
+    };
+    oButtons[8].onclick = function () {
+        topNum += 10;
+        leftNum += 10;
+        styleHandler(oImg,['top','left'],[topNum,leftNum]);
+    };
+
+</script>
+</body>
+</html>

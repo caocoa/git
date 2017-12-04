@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<header>
+			<section></section>
+			123
+			<footer>
+				<p></p>
+			</footer>
+			<!--12312-->
+
+			<div>
+				<p>1</p>
+				<a href="#">2</a><span>3</span></div>
+		</header>
+
+		<script>
+						var oHeader = document.querySelector("header");
+						
+						console.log(getAllElementChildren(oHeader));
+			/*
+			 * 找到一个元素节点的所有元素子节点
+			 * @param ele 
+			 * @return [Array] 所有元素子节点
+			 * 
+			 */
+			function getAllElementChildren(ele) {
+				if(ele.nodeType === Node.ELEMENT_NODE) {
+					var resule = [];
+					for(i = 0; i < ele.childNodes.length; i++) {
+						if(ele.childNodes[i].nodeType === Node.ELEMENT_NODE) {
+							resule.push(ele.childNodes[i]);
+						}
+					}
+					return resule;
+				}
+			}
+		</script>
+	</body>
+
+</html>

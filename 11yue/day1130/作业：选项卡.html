@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul {
+				height: 300px;
+			}
+			
+			ul li {
+				width: 100px;
+				height: 30px;
+				list-style: none;
+				padding: 0 5px;
+				float: left;
+				color: #fff;
+				border: 2px solid #000;
+				position: relative;
+			}
+			
+			ul li section {
+				width: 330px;
+				height: 200px;
+				background-color: inherit;
+				position: absolute;
+				top: 30px;
+				display: none;
+			}
+			
+			li:nth-child(1) {
+				background-color: #ff0000;
+			}
+			
+			li:nth-child(1) section {
+				left: 5px;
+
+			}
+			
+			li:nth-child(2) {
+				background-color: #00ff00;
+			}
+			
+			li:nth-child(2) section {
+				left: -110px;
+
+			}
+			
+			li:nth-child(3) {
+				background-color: #0000ff;
+			}
+			
+			li:nth-child(3) section {
+				left: -225px;
+
+			}
+			.now{
+				border-bottom: inherit;
+			}
+			.now section{
+				display: block;
+				border-bottom: inherit;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li class="now">
+				<section ></section>
+			</li>
+			<li>
+				<section></section>
+			</li>
+			<li>
+				<section></section>
+			</li>
+		</ul>
+		<script>
+			var oLis = document.querySelectorAll("li");
+			
+			for(i=0;i<oLis.length;i++){
+				oLis[i].onmousemove = function(){
+					for(j=0;j<oLis.length;j++){
+						oSections[j].className = "";
+					}
+					this.className = "now";
+				}
+			}
+			
+		</script>
+	</body>
+
+</html>

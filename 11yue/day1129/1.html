@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<header>
+		<aside>
+			<span></span>
+		</aside>
+		<section>
+			一. 大多数人所说的H5抓娃娃是什么？H5抓娃以分为两类：PC端和移动端。 PC端的H5抓娃娃，只要支持WebRTC的浏览器，就可以直接使用Agora Web SDK。当然，也可以使用WebRTC自研，解决若干服务端传输、设备适配、回声、可用度等问题后，就可以商用了。PC端的H5抓娃娃，已经有很成熟的解决方案。
+      移动端的H5抓娃娃，就比较复杂了。移动端的H5抓娃娃是指两种：移动web浏览器和微信内网页抓娃娃。大多数抓娃娃厂商的需求是在微信推广网页抓娃娃，不是除微信以外的移动浏览器。 那么，问题很清楚了，大多数人所说的H5抓娃娃是指微信内置浏览器抓娃娃，下文为了叙述方便，就简称微信H5抓娃娃。
+      作者：Agora 链接：https://juejin.im/post/5a1e1ebaf265da432002ff71 
+
+ 来源：掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+       二. 微信H5抓娃娃和Naive App抓娃娃有什么区别？目前成熟的PC端Web抓娃娃，是通过WebRTC来实现。绝大多数浏览器都对WebRTC有较好的支持。但是iOS的微信内置浏览器不支持WebRTC。 实时视频流处理流程上图是实时视频流的大致处理流程，在线视频抓娃娃也是如此。在抓娃娃的业务场景中，采集是通过安放在娃娃机上的主板或PC机来实现，渲染/播放就是娃娃机操作端。微信H5抓娃娃与App抓娃娃的唯一区别就是娃娃机操作端。前者是微信内置浏览器，后者是Native
+      App。 作者：Agora 链接：https://juejin.im/post/5a1e1ebaf265da432002ff71 
+
+ 来源：掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+       三. 微信H5抓娃娃怎么实现？接下来，就以声网Agora的微信H5方案，来揭开微信H5抓娃娃的神秘面纱。 正如前文所说，微信H5要解决的就是最后一个环节——操作端播放视频。声网采用的策略是，使用JSMpeg在微信浏览器播放。 声网Agora在线抓娃娃技术架构图
+      JSMpeg 是用 JavaScript 实现的视频播放器，它包括一个 MPEG 分离器，MPEG1 视频和 MP2 音频解码器，WebGL 和 Canvas2D 渲染和 WebAudio 声音输出。JSMpeg 的体积相对较小，在绝大多数浏览器上都能工作的很好，在
+      iPhone 5S 上能够以 30fps 的帧率解码 720P 的视频。 由于JSMpeg只支持MPEG1格式，所以在解码环节增加一个转码Server，将视频格式转成MPEG1。再通过中继Server将视频分发到微信浏览器，通过JSMpeg播放。
+      其他环节，微信H5方案与非微信H5方案完全一致。 娃娃机端，通过主板或PC机连接两个摄像头，采集视频数据。 通过Agora 的专利编码器编码器，进行视频流的优化。 通过Agora 全球部署的实时虚拟通信网SD-RTN进行视频实时传输 最后到达操作端，解码、播放
+      操作端通过业务Server将操控指令发送给娃娃机端，通过视频流获得实时反馈。 可以从SD-RTN分出一路高延时的rtmp流播放给观众 通过技术架构图可以看到，微信H5抓娃娃，最后是通过成熟的开源项目来实现，这也是大多数主流微信H5抓娃娃的实现方式。那么，决定微信H5抓娃娃体验不同的差异在哪?
+      作者：Agora 链接：https://juejin.im/post/5a1e1ebaf265da432002ff71 
+
+ 来源：掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+       四. 决定微信H5抓娃娃体验不同的差异在哪?抓娃娃最关键的体验有以下3个方面： 延时 可用度 服务稳定 延时 延时有操作端到娃娃机的指令延时，和娃娃机到操作端的视频延时。 指令延时：由于操作端到娃娃机端的指令，数据包极小，因此延时很低，一般是几十毫秒。
+      视频延时：视频延时如果在400ms以内，玩家可接受。 决定抓娃娃延时体验的关键在于视频延时。 视频清晰度和延时，是两个互相对立的。在带宽不变的情况下，视频越清晰，帧率、码率越高，延时越高。因此，在视频清晰度和延时之间要取得一个平衡点。 声网通过私有专利的编解码器，在保证清晰度的前提下，尽可能的降低码率。通过丢包重传、FEC、带宽检测、动态码率调整等弱网对抗策略，保证用户在网络质量不佳时，也能获得流畅的体验。
+      声网在全球部署近100个节点，构成SD-RTN通信网。SD-RTN系统能够实时根据各节点的连接和传输状况、负载状况以及到用户的距离和响应时间，自动分配最优、最通畅的传输路径，达到实时传输需要的质量保障级别。 可用度 根据Callstats.io 
+
+数据显示，在美国地区，基于WebRTC的实时通讯有89%可以被成功建立。而声网的SD-RTN通过在每个地区的密集布点，已经将登录成功率提高至99%。
+      服务稳定 平均400ms延时和稳定400ms延时，用户的体验是不一样的。稳定的400ms延时，(用户心里面会有预期)，相比一会儿 200，一会儿 800 会有更好的体验。 抓娃娃快速上线之后的关键问题，就是留存。除去业务模式，决定用户留存的就是体验质量。舍弃用户体验而求快，是本末倒置。回归质量、用户体验，才是长久的发展之路。
+      扫描下方二维码，快速体验微信H5抓娃娃demo 作者：Agora 链接：https://juejin.im/post/5a1e1ebaf265da432002ff71 
+
+ 来源：掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+		</section>
+		
+	</header>
+		<script>
+			var box = document.querySelector('header');
+			var ariticle = document.querySelector('section');
+			var barBlock = document.querySelector('span');
+			
+			var rate = box.clientHeight- ariticle.clientHeight;
+			
+			barBlock.style.height = box.clientHeight * rate + 'px';
+			
+			document.onmousedown = function(event){
+				event = event ||window.event;
+				var deltaY = event.clientY - barBlock.offsetTop;
+				var y = event.clientY - deltaY;
+				document.onmousemove = function(){
+					if(y<=0){y=0;}
+					if(y>=box.clientHeight - barBlock.clientHeight){
+						y= box.clientHeight - barBlock.clientHeight;
+					}
+					barBlock.style.top = y + 'px';
+					ariticle.style.top = y / rate = 'px';
+				
+				}
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+			}
+			
+			
+		</script>
+	</body>
+</html>

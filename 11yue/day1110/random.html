@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//闭合区间
+			var max = 100;
+			var min = 1;
+			var ran = parseInt(Math.random()*(max-min+1)+1);
+			console.log(ran);
+//			Math.floor(四舍五入);Math.ceil(向上取整);可以得到相同效果
+			//前闭后开区间
+			var max2 = 100;
+			var min2 = 1;
+			var ran2 = Math.random()*(max-min+1)+1;
+			console.log(ran2);
+			//前开后闭区间
+			var ran3 = Math.abs(Math.random()-1);
+			console.log(ran3);
+			//开区间
+			var ran4 = Math.abs(Math.random()-1) + Math.random();
+			console.log(ran4);
+		</script>
+	</body>
+</html>

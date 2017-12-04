@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>键盘事件</title>
+  <style>
+    div{
+      font-size: 30px;
+      background-color: #000;
+      color: #fff;
+    }
+    span{
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!-- <p><span></span>:<span></span></p> -->
+  </div>
+  <script>
+    var eleDiv = document.querySelector('div');
+
+    // 常用键盘事件：keydown keypress keyup(比较常用)
+    // 键盘事件，事件对象里 code：按键名  key：键的内容 keyCode：键值 三个属性常用到
+    document.addEventListener('keyup',function(event){
+      // console.log(event);
+      event = event || window.event;
+      var eleP = document.createElement('p');
+      var eleSpan = document.createElement('span');
+      eleSpan.innerHTML = event.code;
+      eleP.appendChild(eleSpan);
+      eleP.innerHTML += ':';
+      eleSpan = document.createElement('span');
+      eleSpan.innerHTML = event.keyCode;
+      eleP.appendChild(eleSpan);
+      eleDiv.appendChild(eleP);
+      if(event.code === 'Space'){
+        console.log('你按的是空格键没错');
+      }else{
+        console.log('你按的是错的');
+      }
+    });
+  </script>
+</body>
+</html>

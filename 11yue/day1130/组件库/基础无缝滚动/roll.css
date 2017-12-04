@@ -1,0 +1,24 @@
+.rolls{
+            width: 800px;
+            height: 130px;
+            border: 10px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;/* 溢出隐藏 */
+        }
+        .rolls-unit{
+            width: 5000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .rolls-unit ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;/* 清除浮动 */
+        }
+        .rolls-unit ul li{
+            float: left;
+            margin-right: 10px;
+        }

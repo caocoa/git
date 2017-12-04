@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+</head>
+<body>
+<script>
+    var str = "i love China";
+    console.log(str.charAt(2));// 字符串中空格算字符
+
+    for(var i = 0;i < str.length; i++){
+        console.log(str.charAt(i));// 字符串所有字符遍历打印输出
+    }
+    var str1 = "i have a dream";
+    console.log(str.concat('!','?'));
+    console.log(str);// 不会改变原字符串
+    console.log(str.concat(str1));
+
+//    indexOf()检索某一个字符或字符串在原字符串中是否存在
+//    第二个参数可选，表示从何位置开始检索
+    console.log(str.indexOf('i',1));// 9
+    console.log(str.indexOf('br'));// -1 在原字符串中没找到br
+
+    // replace()替换
+    console.log(str.replace("love","like"));
+    console.log(str);// 不会更改原字符串
+
+    console.log(str.slice(0,2));// 切下来的东西
+    console.log(str);// 不会改变原字符串
+
+
+    // 字符串 -> 数组 参数是分隔符
+    console.log(str.split(" "));
+    console.log(str);
+
+    console.log(str.substr(2,4));// love
+//    substring()和slice()有相似之处用哪个都可以
+    console.log(str.substring(2,6));// love
+
+
+    var strm = "I AM A TEACHER";
+    var strn = "i am a student";
+    console.log(strn.toUpperCase());// 字符全大写
+    console.log(strm.toLowerCase());// 字符全小写
+
+</script>
+</body>
+</html>

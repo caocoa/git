@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击移动</title>
+    <style>
+        header,footer{
+            width: 300px;
+            height: 400px;
+            border: 2px solid #000;
+            float: left;
+        }
+        nav{
+            float: left;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <ul>
+    	<li><input type="checkbox">兔子</li>
+    	<li><input type="checkbox">狐狸</li>
+    	<li><input type="checkbox">树懒</li>
+    	<li><input type="checkbox">水牛</li>
+    	<li><input type="checkbox">羚羊</li>
+    </ul>
+</header>
+
+<nav>
+    <button> >>>>>>>> </button>
+    <button> <<<<<<<< </button>
+</nav>
+
+<footer>
+    <ul>
+
+    </ul>
+</footer>
+<script>
+    var box1 = document.querySelector('header');
+    var box2 = document.querySelector('footer');
+
+    var btn1 = document.querySelectorAll('nav button')[0];
+    var btn2 = document.querySelectorAll('nav button')[1];
+
+    var ul1 = box1.querySelector('ul');
+    var ul2 = box2.querySelector('ul');
+
+
+
+    function moveLeftOrRight(checkedTarget,removeFrom,appendTo){
+    	var checkedArr = [];
+        for(var i = 0;i < checkedTarget.length; i++){
+            if(checkedTarget[i].checked){
+                checkedArr.push(checkedTarget[i]);
+            }
+        }
+        for(var j = 0;j < checkedArr.length; j++){
+            removeFrom.removeChild(checkedArr[j].parentNode);
+            appendTo.appendChild(checkedArr[j].parentNode);
+        }
+    }
+    
+    btn1.onclick = function () {
+    	var box1Inputs = box1.querySelectorAll('input');
+       	moveLeftOrRight(box1Inputs,ul1,ul2)
+    }
+    btn2.onclick = function(){
+    	var box2Inputs = box2.querySelectorAll('input');
+    	moveLeftOrRight(box2Inputs,ul2,ul1)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				margin: 0;
+			}
+			
+			section {
+				width: 500px;
+				height: 500px;
+				border: 2px solid #ccc;
+				margin: 30px;
+			}
+			
+			div {
+				width: 50px;
+				height: 50px;
+				background-color: #00008B;
+				position: relative;
+			}
+		</style>
+	</head>
+
+	<body>
+		<section>
+			<div></div>
+		</section>
+
+		<script>
+			var oDiv = document.querySelector('div');
+			var oSection = document.querySelector('section');
+
+			var xBian = parseFloat(getComputedStyle(oSection)['width']) + oSection.offsetLeft;
+			var yBian = parseFloat(getComputedStyle(oSection)['height']) + oSection.offsetTop;
+
+			oDiv.onmousedown = function(event) {
+				var detalX = event.clientX - oDiv.offsetLeft;
+				var detalY = event.clientY - oDiv.offsetTop;
+				document.onmousemove = function(event) {
+					//					if(oDiv.style.left>xBian){
+					//						oDiv.style.left = xBian +'px';
+					//					}else{
+					//						oDiv.style.left = event.clientX - detalX + 'px';
+					//					}
+					//					if(oDiv.style.top > yBian){
+					//						oDiv.style.top = yBian +'px';
+					//					}else{
+					//						oDiv.style.top = event.clientY - detalY + 'px';
+					//					}
+					//						
+					oDiv.style.left = event.clientX - detalX + 'px';
+					oDiv.style.top = event.clientY - detalY + 'px';
+				};
+
+			};
+			document.onmouseup = function() {
+				document.onmousemove = null;
+			};
+		</script>
+	</body>
+
+</html>

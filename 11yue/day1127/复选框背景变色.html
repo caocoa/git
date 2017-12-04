@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.checked{
+				background-color: #111;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><input type="checkbox"/></li>
+			<li><input type="checkbox"/></li>
+			<li><input type="checkbox"/></li>
+			<li><input type="checkbox"/></li>
+		</ul>
+		<script>
+			var oInputs = document.querySelectorAll("ul li input");			 
+			for(i=0;i<oInputs.length;i++){
+				oInputs[i].onclick = function(){
+					if(this.checked){
+						this.parentNode.className = "checked";
+					}else{
+						this.parentNode.className = "";
+					}
+				}
+			}			
+		</script>
+	</body>
+</html>

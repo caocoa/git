@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			function jiecheng(x) {
+				var count = 1;
+				for(j = 1; j <= x; j++) {
+					count = count * j;
+				}
+				return count;
+			}
+
+			function sanweishu(y) {
+				var bai = y / 100;
+				var a1 = y % 100;
+				var shi = a1 / 10;
+				var ge = a1 % 10;
+
+				if(jiecheng(bai) + jiecheng(shi) + jiecheng(ge) === y) {
+					console.log(y);
+				}
+			}
+			for(i = 100; i <= 999; i++) {
+				sanweishu(i);
+			}
+		</script>
+	</body>
+
+</html>

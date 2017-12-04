@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 50px;
+				padding: 5px 10px;
+				border: 5px solid #3ae;
+				border-radius: 10px;
+			}
+			
+			button {
+				padding: 5px 10px;
+				border-radius: 10px;
+				border: none;
+				outline: none;
+				background-color: #ff6600;
+				color: #ccc;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>点名</div>
+		<button>开始</button>
+		<script>
+			var oDiv = document.querySelector("div");
+			var oBut = document.querySelector("button");
+			var names = ['a', 'b', 'c', 'd', '甲', '乙', '丙', '丁'];
+			var oIndex;
+			var speedTime = 100;
+			var totalTime = 3000;
+			oBut.onclick = function() {
+				var times = 0;
+				var timer = setInterval(function() {
+					times++;
+					if(times > totalTime/speedTime){
+						clearInterval(timer);
+					}
+					oIndex = parseInt(Math.random() * (7 - 0 + 1));
+					oDiv.innerHTML = names[oIndex];
+				}, 100);
+			}
+		</script>
+	</body>
+
+</html>

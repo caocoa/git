@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播图</title>
+		<style>
+			body {
+				margin: 0;
+			}
+			
+			#container {
+				width: 665px;
+				height: 444px;
+				position: relative;
+				overflow: hidden;
+				margin: 0 auto;
+			}
+			
+			#container ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				width: 4200px;
+				height: 444px;
+			}
+			
+			#container ul li {
+				display: none;
+			}
+			
+			aside {
+				width: 26px;
+				height: 44px;
+				position: absolute;
+				top: 50%;
+				margin-top: -22px;
+				cursor: pointer;
+				opacity: 0.5;
+			}
+			
+			#left-btn {
+				left: 10px;
+				background: url('./images/left.png');
+				background-size: 100% 100%;
+			}
+			
+			#right-btn {
+				right: 10px;
+				background: url('./images/right.png');
+				background-size: cover;
+			}
+			
+			#container ul li.current {
+				display: block;
+			}
+			
+			ol {
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				left: 50%;
+				margin-left: -90px;
+				bottom: 10px;
+			}
+			
+			ol li {
+				width: 10px;
+				height: 10px;
+				background-color: #fff;
+				float: left;
+				margin: 0 10px;
+				border-radius: 50%;
+				opacity: .7;
+			}
+			
+			.current-li {
+				background-color: orangered;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<ol>
+				<li class="current-li"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<ul>
+				<li class="current"><img src="./images/0.jpg" alt=""></li>
+				<li><img src="./images/1.jpeg" alt=""></li>
+				<li><img src="./images/2.jpeg" alt=""></li>
+				<li><img src="./images/3.jpeg" alt=""></li>
+				<li><img src="./images/4.jpeg" alt=""></li>
+				<li><img src="./images/5.jpeg" alt=""></li>
+			</ul>
+			<aside id="left-btn"></aside>
+			<aside id="right-btn"></aside>
+		</div>
+		<script>
+			var oContainer = document.querySelector("#container");
+			var oUl = document.querySelector("#container ul");
+			var oLis = document.querySelectorAll("#container ul li");
+			var oOlLis = document.querySelectorAll("#container ol li");
+
+			var leftBtn = document.querySelector("#left-btn");
+			var rightBtn = document.querySelector("#right-btn");
+
+			var index = 0;
+
+			leftBtn.onclick = function() {
+				index--;
+				if(index < 0) {
+					index = 5
+				}
+				changeImg();
+			};
+			rightBtn.onclick = function() {
+				index++;
+				if(index > 5) {
+					index = 0;
+				}
+				changeImg();
+			};
+			for(i = 0; i < oOlLis.length; i++) {
+				oOlLis[i].xuhao = i;
+				oOlLis[i].onmousemove = function() {
+					index = this.xuhao;
+					changeImg();
+				};
+			}
+
+			function changeImg() { // 改变显示图片,动态添加类名
+				for(var i = 0; i < oLis.length; i++) { // 先把所有current类名去掉
+					oLis[i].className = "";
+					oOlLis[j].className = "";
+				}
+				oLis[index].className = "current"; // 当前需要显示的加上current类名
+				oOlLis[index].className = "current-li";
+			}
+		</script>
+	</body>
+
+</html>

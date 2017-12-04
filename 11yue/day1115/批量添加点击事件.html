@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量添加点击事件</title>
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul li{
+            background-color: red;
+            font-size: 20px;
+            color: white;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<ul id="oUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+    var oLis = document.getElementsByTagName("li");// 通过标签名获取来的是个数组
+//    console.log(oLis);
+    console.log(this);// 在全局作用域内，this指向Window
+    for(var i = 0;i < oLis.length;i++){
+        (function (m) {
+            oLis[m]. = function () {
+//                console.log(this);// this在事件内部指向事件的派发者（oLis[m]）
+                alert(this.innerText);
+            }
+        })(i);
+    }
+</script>
+</body>
+</html>

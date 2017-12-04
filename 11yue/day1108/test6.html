@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			for(i = 100; i < 1000; i++) {
+				var bai = parseInt(i / 100);
+				var i1 = i % 100;
+				var shi = parseInt(i1 / 10);
+				var i2 = i1 % 10;
+				var ge = parseInt(i2 / 1);
+				var he = Math.pow(bai, 3) + Math.pow(shi, 3) + Math.pow(ge, 3);
+				if(i == he) {
+					console.log(he);
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+<body>
+<script>
+    function printGra(n) {
+        for(var i = 1;i <= n;i++){
+            var space = "";
+            var stars = "";
+            for(var j = 1;j <= n - i;j++){
+                space += " ";
+            }
+            for(var k = 1;k <= 2*i-1; k++){
+                stars += "*";
+            }
+            space += stars;
+            console.log(space + "\n");
+        }
+    }
+    printGra(5);
+
+</script>
+</body>
+</html>

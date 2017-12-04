@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				margin: 0;
+				height: 5000px;
+			}
+			
+			aside {
+				width: 100px;
+				height: 200px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: gold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<aside>
+
+		</aside>
+		<script src="js/animate_2.1.js"></script>
+		<script>
+			var ad = document.querySelector('aside');
+
+			window.onscroll = move;
+			window.onresize = move;
+			move();
+			function move() {
+				var windowHeight = document.documentElement.clientHeight;
+				var adHeight = ad.clientHeight;
+				var scrollHeight = document.body.scrollTop || document.documentElement.scrollTop;
+
+				var adTop = (windowHeight - adHeight) / 2 + scrollHeight;
+
+				animate(ad, {
+					'top': adTop
+				}, 500, "Linear");
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			header {
+				width: 670px;
+				height: 221px;
+				background: url(img/pic_bg.gif);
+				margin: 100px auto;
+				border: 2px solid #3ae;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			header ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			header ul li {
+				position: absolute;
+				opacity: 1;
+				filter: alphe(opacity=1);
+			}
+			
+			header ul li img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			li:nth-child(1) {
+				width: 55px;
+				height: 37px;
+				left: -55px;
+				top: 84px;
+				opacity: 0;
+				filter: alphe(opacity=0);
+			}
+			
+			li:nth-child(2) {
+				width: 71px;
+				height: 54px;
+				left: 16px;
+				top: 67px;
+			}
+			
+			li:nth-child(3) {
+				width: 122px;
+				height: 86px;
+				left: 104px;
+				top: 35px;
+			}
+			
+			li:nth-child(4) {
+				width: 161px;
+				height: 112px;
+				left: 247px;
+				top: 16px;
+			}
+			
+			li:nth-child(5) {
+				width: 122px;
+				height: 86px;
+				left: 436px;
+				top: 35px;
+			}
+			
+			li:nth-child(6) {
+				width: 71px;
+				height: 54px;
+				left: 583px;
+				top: 67px;
+			}
+			
+			li:nth-child(7) {
+				width: 55px;
+				height: 37px;
+				left: 678px;
+				top: 84px;
+				opacity: 0;
+				filter: alphe(opacity=0);
+			}
+			
+			aside:nth-of-type(1) {
+				width: 40px;
+				height: 40px;
+				background-color: transparent;
+				top: 151px;
+				left: 25px;
+				position: absolute;
+			}
+			
+			aside:nth-of-type(2) {
+				width: 40px;
+				height: 40px;
+				background-color: transparent;
+				top: 151px;
+				right: 25px;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<ul>
+				<li><img src="img/0.png" alt="" /></li>
+				<li><img src="img/1.png" alt="" /></li>
+				<li><img src="img/2.png" alt="" /></li>
+				<li><img src="img/3.png" alt="" /></li>
+				<li><img src="img/4.png" alt="" /></li>
+				<li><img src="img/5.png" alt="" /></li>
+				<li><img src="img/6.png" alt="" /></li>
+			</ul>
+			<aside></aside>
+			<aside></aside>
+		</header>
+		<script src="js/animate_2.1.js"></script>
+		<script>
+			var oContaier = document.querySelector("header");
+			var leftButton = document.querySelectorAll("aside")[0];
+			var rightButton = document.querySelectorAll("aside")[1];
+			var oLis = document.querySelectorAll("header ul li");
+
+			var aniTime = 600;
+			var aniStyle = 'QuadEaseInOut'
+			var interval = 1600;
+
+			var liArray = [];
+			var stateArrJSON = [];
+
+			for(var i = 0; i < oLis.length; i++) {
+				stateArrJSON.push({
+					"width": parseFloat(fetchComputedValue(oLis[i], "width")),
+					"height": parseFloat(fetchComputedValue(oLis[i], "height")),
+					"left": parseFloat(fetchComputedValue(oLis[i], "left")),
+					"top": parseFloat(fetchComputedValue(oLis[i], "top")),			
+					"opacity": parseFloat(fetchComputedValue(oLis[i], "opacity")),
+				});
+				liArray.push(oLis[i]);
+			}
+
+			var timer = setInterval(rightBtnHandler, interval);
+
+			oContaier.addEventListener('mouseover', function() {
+				clearInterval(timer);
+			})
+			oContaier.addEventListener('mouseout', function() {
+				timer = setInterval(rightBtnHandler, interval);
+			})
+
+			rightButton.addEventListener('click',rightBtnHandler);
+
+			function rightBtnHandler() {
+				if(liArray[1].isanimated) return;
+				for(j = 1; j <= oLis.length - 1; j++) {
+					animate(liArray[j], stateArrJSON[j - 1], aniTime, aniStyle);
+				}
+				for(var k in stateArrJSON[oLis.length-1]) {
+					liArray[0].style[k] = stateArrJSON[oLis.length-1][k] + "px";
+				}
+				liArray.push(liArray.shift());
+			}
+
+			leftButton.addEventListener('click', function() {
+				if(liArray[1].isanimated) return;
+				for(j = 0; j <= oLis.length - 2; j++) {
+					animate(liArray[j], stateArrJSON[j + 1], aniTime, aniStyle);
+				}
+				for(var k in stateArrJSON[0]) {
+					liArray[oLis.length - 1].style[k] = stateArrJSON[0][k] + "px";
+
+				}
+				liArray.unshift(liArray.pop());
+			});
+		</script>
+	</body>
+
+</html>

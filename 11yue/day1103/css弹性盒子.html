@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css弹性盒子</title>
+  <style>
+    /* body{direction: rtl;} */
+    h1,h2,h3,h4,h5,h6{margin: 0;}
+    header{
+      display: flex;
+      display: -webkit-flex;
+      width: 800px;
+      height: 500px;
+      background-color: #ccc;
+      flex-direction: column;/* row-reverse横向逆序 */
+      -webkit-flex-direction: column;/* column-reverse纵向逆序 */
+      -moz-flex-direction: column;
+      /* 主轴方向上对齐方式：flex-start/flex-end/center/space-between/space-around */
+      justify-content: space-between;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: flex-start;
+    }
+    section{
+      width: 100px;
+      height: 100px;
+      background-color: #3ae;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font: 30px/100px Microsoft YaHei;
+      text-align: center;
+    }
+    section:first-child{
+      order: 9;
+    }
+    section:nth-child(2){
+      order: -1;
+    }
+    section:nth-child(3){
+      order: 0;
+    }
+    section:last-child{
+      order: 2;
+    }
+    /* section:not(:last-child){
+      margin-right: 10px;
+    } */
+    footer{
+      display: flex;
+      display: -webkit-flex;
+      width: 800px;
+      height: 900px;
+      background-color: #ccc;
+      /* 侧轴方向上对齐方式：flex-start/flex-end/center/baseline/stretch(默认值) */
+      align-items: baseline;
+      -webkit-align-items: baseline;
+      -moz-align-items: baseline;
+      /* 弹性子元素是否换行显示（默认是不换行） */
+      flex-wrap: wrap;/* no-wrap/wrap/wrap-reverse */
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      /* 弹性子元素的行在侧轴方向对齐方式，值和align-items一样 */
+      align-content: space-around;
+      -webkit-align-content: space-around;
+      -moz-align-content: center;
+    }
+    aside{
+      width: 300px;
+      height: 100px;
+      background-color: #3ae;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    aside:nth-child(1){
+      height: 200px;
+      font-size: 20px;
+    }
+    aside:nth-child(3){
+      height: 80px;
+      font-size: 30px;
+    }
+    aside:last-child{
+      height: 300px;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+  </header>
+  <br><br><br>
+  <footer>
+    <aside>y</aside>
+    <aside>b</aside>
+    <aside>c</aside>
+    <aside>g</aside>
+  </footer>
+  <br><br><br>
+  <style>
+    nav{
+      width: 1000px;
+      height: 800px;
+      background-color: #47f;
+      display: flex;
+      display: -webkit-flex;
+      /* flex-wrap: wrap; */
+    }
+    article{
+      width: 300px;
+      height: 200px;
+      background-color: #89e;
+    }
+    article:nth-child(1){
+      margin: auto;/* 令元素在其父元素中水平竖直方向上居中的弹性盒方法 */
+      flex: 1 0 auto;
+    }
+    article:nth-child(2){
+      margin-left: auto;
+      /* auto属性值在弹性盒中的应用 */
+      flex: 1 0 auto;
+    }
+    article:nth-child(3){
+      align-self: flex-end;
+      flex: 1 0 auto;
+      flex-shrink: 3;
+    }
+    article:last-child{
+      align-self: center;
+      flex: 1 0 auto;
+    }
+  </style>
+  <nav>
+    <article>
+      123
+    </article>
+    <article>
+      456
+    </article>
+    <article>
+      789
+    </article>
+    <article>
+      010
+    </article>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title>css动画</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: rgba(123,234,111,.3);
+			border: 3px double rgba(98,47,21,.8);
+			border-radius: 50%;
+			animation: shit 3s ease 500ms 2 reverse;
+			-webkit-animation: shit 3s ease 500ms 2 normal;
+		}
+		@keyframes shit{
+			25%{ 
+			width: 300px;
+			height: 150px;
+			}
+			50%{
+				background-color: #f10180;
+			}
+			75%{
+				border-radius: 40%;
+			}
+			100%{
+				border: 1px dotted #f60;
+			}
+		}
+		@-webkit-keyframes shit{
+			25%{ 
+			width: 300px;
+			height: 150px;
+			}
+			50%{
+				background-color: #f10180;
+			}
+			75%{
+				border-radius: 40%;
+			}
+			100%{
+				border: 1px dotted #f60;
+			}
+		}
+	</style>
+	</head>
+	<body>
+		<div>
+			
+		</div>
+	</body>
+</html>

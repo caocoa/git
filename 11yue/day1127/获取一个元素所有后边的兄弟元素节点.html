@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>获取一个元素所有后边的兄弟元素节点</title>
+	</head>
+
+	<body>
+		<header>
+			<section></section>
+			hahaha
+			<footer>
+				<p></p>
+			</footer>
+			<!--hello-->
+			<aside></aside>
+		</header>
+		<script src="elementNodeOperation.js"></script>
+		<script>
+			var eleSection = document.querySelector('section');
+			console.log(getAllElementNextSiblings(eleSection));
+
+//			function getAllElementNextSiblings(ele) {
+//				var next = ele;
+//				var result = [];
+//				while(next = next.nextSibling) {
+//					if(next.nodeType === Node.ELEMENT_NODE) {
+//						result.push(next);
+//					}
+//				}
+//				return result;
+//			}
+//
+//			function getClosestOneNextSibling(ele) {
+//				var next = ele;
+//				while(next = next.nextSibling) {
+//					next = next.nextSibling;
+//					if(next.nodeType === Node.ELEMENT_NODE) {
+//						return next;
+//					}
+//
+//				}
+//				return null;
+//			}
+//			function getClosestOnePreviousSibling(ele){
+//				var prev = ele;
+//				while(prev = prev.previousSibling){
+//					prev = prev.previousSibling;
+//					if(prev.nodeType === Node.ELEMENT_NODE) {
+//							return prev;
+//					}
+//					
+//				}
+//				return null;
+//			}
+//			function getAllElementPreviousSiblings(ele){
+//				var prev = ele;
+//				var result = [];
+//				while(prev = prev.previousSibling) {
+//					if(prev.nodeType === Node.ELEMENT_NODE) {
+//						result.push(prev);
+//					}
+//				}
+//				return result;
+//			}
+			
+		</script>
+	</body>
+
+</html>

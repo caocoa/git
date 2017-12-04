@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<button>hehehhe</button>
+		<script>
+			var content = document.querySelector('div');
+			var ajaxBtn = document.querySelector('button');
+			
+			ajaxBtn.addEventListener('click',function(){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState ===4){
+						content.innerHTML = xhr.responseText;
+					}
+				}
+				xhr.open('get','http://127.0.0.1/ajex/heiheihie.txt',true);
+				xhr.send(null);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css多列</title>
+  <style>
+    header{
+      width: 500px;
+      height: 300px;
+      border: 2px solid #000;
+      margin: 0 auto;
+      padding: 40px;
+      /* 指定多列列数 */
+      /* column-count: 5;
+      -webkit-column-count: 5;
+      -moz-column-count: 5; */
+      /* 制定列间间隙宽度 */
+      column-gap: 50px;
+      -webkit-column-gap: 50px; 
+      -moz-column-gap: 50px;
+      /* 列之间以线隔开，线的样式 */
+      column-rule: 3px dashed #ccc;
+      /* 列的宽度 */
+      /* column-width: 150px; */
+      /* 渲染时会优先考虑列的宽度，当宽度较大时会放弃列数设置的值，在满足列宽情况下自动设置列数 */
+      /* -webkit-column-width: 150px;
+      -moz-column-width: 150px; */
+      columns: 100px 4;
+    }
+    header h1{
+      /* 跨列元素跨几列设置 */
+      column-span: 1;
+      -webkit-column-span: 1;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>与君生别离</h1>
+  月色冷清你容颜 记忆残存的香味 摇落你眉眼清欢 轻减小腰围的心事 衣带，寸寸渐缓 过尽飞鸿的字句 满眼映你模样 度一个人的白昼黑夜 心，无处安放 暗香寂寞，浅浅落红处 你那网情深，是水般盈盈 行行重行行的脚步 荒凉了 我寻觅的目光
+</header>
+</body>
+</html>

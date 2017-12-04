@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多层循环</title>
+</head>
+<body>
+<script>
+//    九九乘法表
+//    ① 第几行就有几个式子
+//    ② 第几列列数加上该列式子数 = 10
+//    ③ 第几列，式子第一个因数都是几
+
+
+//    *
+//    **
+//    ***
+//    ****
+//    *****
+//    i 控制行数
+    for(var i = 1;i <= 5; i++){
+//        j 控制第 i 行 ，* 的个数
+        for(var j = 1;j <= i; j++){
+            document.write("*");
+        }
+
+        document.write("<br>");
+    }
+//    断点调试查看两层循环运行情况
+//    i = 1   j = 1 j <= 1 j = 2
+//    i = 2   j = 1 j <= 2 j = 2 j = 3
+//    i = 3
+
+
+
+//    找1~100之内的质数
+//    方法一： 约数个数是2
+//    for(var m = 1;m <= 100; m++){
+//        var count = 0;// 统计约数个数，计数器
+//        for(var n = 1;n <= m; n++){
+//            if(m % n === 0){
+//                count++; // 如果能整除说明 n 是  m 的约数，找到一个约数，count + 1
+//            }
+//        }
+//        if(count === 2){     //  找完 m 的所有约数并统计完个数后，再进行判断
+//            console.log(m);
+//        }
+//    }
+//    方法二： 只有 1 和它本身两个约数
+    for(var x = 1;x <= 100; x++){
+        if(x === 1){
+            console.log("1既不是质数也不是合数");
+        }else if(x === 2){
+            console.log(x);
+        }else{
+            var isPre = true;// 借助一个布尔量，开关思想
+            for(var y = 2;y <= x - 1; y++){
+                if(x % y === 0){
+                    isPre = false;
+                }
+            }
+            if(isPre){
+                console.log(x);
+            }
+        }
+    }
+</script>
+</body>
+</html>

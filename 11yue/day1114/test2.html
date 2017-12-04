@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var input = prompt();
+			var reg = /[01]+_+\d{8}$/g;
+			if(reg.test(input)) {
+				console.log("是本地电话");
+			} else {
+				console.log("不是本地电话");
+			}
+		</script>
+	</body>
+
+</html>

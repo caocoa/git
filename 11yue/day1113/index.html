@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+//			function mutisun(a,b,c,d){
+//				switch(arguments.length){
+//					case:0
+//					alert();
+//					break;
+//					case:1
+//					alert();
+//					break;
+//					case:2
+//					alert();
+//					break;
+//					default:
+//					break;
+//				}
+//			}
+
+//			(function haha(){
+//				alert("haha");
+//			}());//形成闭包，函数只在作用域内生效
+//			haha();
+			
+//			function outer(){
+//				var a = 1;
+//				inner();
+//				function inner(){
+//					var b = 2;
+//					console.log(a);
+//					console.log(b);
+//				}
+//			}
+//          debugger
+//			outer();
+//			console.log(a);
+			
+//			var a =1;
+//			function aaa(){
+//				var a = 5;
+//				console.log(a);
+//			}
+//			aaa();
+//			console.log(a);
+
+//			function aaa(){
+//				a = 5;//在函数内不使用var定义变量，默认在全局声明该变量，然后再函数内赋值
+//				console.log(a);
+//			}	
+//			aaa();
+//			console.log(a);
+			
+			function outside(){
+				var haha = 233;
+				function inside(){
+					console.log(haha);
+				}
+				return inside;
+			}
+			outside()();
+			var temp =outside();
+			temp();
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//模板
+			var str = "好@xinqing@啊，我买了一个@dongxi@，花了@qian@元钱";
+			//字典，数据
+			var dictionary = {
+				"xinqing": "高兴",
+				"dongxi": "vivo手机",
+				"qian": 7000
+			}
+			//数据绑定
+			str = str.replace(/\@([a-z]+)\@/g, function(match, $1, index, string) {
+				return dictionary[$1];
+			});
+			console.log(str);
+		</script>
+
+	</body>
+
+</html>

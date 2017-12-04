@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function rev(char){
+				var arr = char.split(" ");
+				var arr1 = [];
+				for(i=0;i<arr.length;i++){
+					arr1.unshift(arr[i]);
+				}
+				console.log(arr1.join(" "))
+			}
+			rev("i come from beijing");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html{font-size: 12px;}
+			div{
+				width: 100px;
+				height: 100px;
+				color: #FFFFFF;
+				font-size: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="background-color: #000;">1234</div>
+		<script>
+//			var oDiv = document.getElementsByTagName("div")[0];
+//			console.log(getComputedStyle(oDiv));
+//			if(getComputedStyle){
+//				alert("支持");
+//			}else{
+//				alert("不支持");
+//			}
+			
+			function fetchComputedValue(ele,style){
+				if(getComputedStyle){
+					styles=styles.replace(/[A-Z]/g,function(match,$1){
+						return "-"+$1.toLowerCase();
+					})
+				}
+			}
+
+		</script>
+	</body>
+</html>

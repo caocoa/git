@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				margin: 0;
+				
+			}
+			header{
+				width: 600px;
+				height: 40px;
+				line-height: 40px;
+				border: 2px solid #f60;
+				margin: 100px;
+				position: relative;
+				overflow: hidden;
+			}
+			header ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li>通知</li>
+				<li>讣告</li>
+				<li>广告</li>
+			</ul>
+		</header>
+		<script src="js/animate.js"></script>
+		<script type="text/javascript">
+			var oUl = document.querySelector("header ul");
+			var oLis = document.querySelectorAll("header ul li");
+			var liLength = oLis.length;
+			var idx = 0;
+			
+			oUl.appendChild(oLis[0].cloneNode(true));//复制并追加第一个li项
+//			console.log(oUl);
+			function roll(){
+				idx++;
+				animate(oUl,{'top':-40 * idx},1000,'ElasticEaseInOut',function(){
+					if(idx>liLength-1){
+						idx = 0;
+						this.style.top = 0;
+					}
+				})
+			}
+			
+			setInterval(roll,3000);
+		</script>
+	</body>
+</html>

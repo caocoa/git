@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排他模型</title>
+    <style>
+        ol{margin: 0;padding: 0;list-style: none;}
+        ol li{
+            width: 20px;
+            height: 20px;
+            background-color: #f10180;
+            float: left;
+            margin: 0 20px;
+            border-radius: 50%;
+        }
+        .current{
+            background-color: #3ae;
+        }
+    </style>
+</head>
+<body>
+<ol>
+    <li class="current"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ol>
+<script>
+    var oLis = document.querySelectorAll("ol li");
+
+    for(var i = 0;i < oLis.length; i++){
+        oLis[i].onmouseover = function () {
+            for(var j = 0;j < oLis.length;j++){
+                oLis[j].className = "";
+            }
+            this.className = "current";
+        };
+    }
+</script>
+</body>
+</html>

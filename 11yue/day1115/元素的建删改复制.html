@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="#">haha</a>
+<script>
+    var newEle = document.createElement("p");// 只创建，要想在页面中渲染，首先加到body中
+    newEle.innerText = "one world one dream";// 纯文本
+    newEle.innerHTML += "<h1>one world one dream</h1>"; // 文本或者标签
+//    document.body.appendChild(newEle);// 追加到document.body中
+    var oScript = document.querySelector("script");
+    document.body.insertBefore(newEle,oScript);// 插入到oScript之前
+
+    document.body.removeChild(document.querySelector("a"));// 从body中移除a标签
+
+    var oInput = document.createElement("input");
+    oInput.type = "color";
+    document.body.replaceChild(oInput,newEle);// 用oInput替换newEle
+
+    var oInput2 = oInput.cloneNode(false);
+    document.body.appendChild(oInput2);
+</script>
+</body>
+</html>

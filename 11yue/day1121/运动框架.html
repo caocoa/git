@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            position: relative;
+            top: 10px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    // 总次数 totalTimes = time / interval；
+    // 初始状态startJSON{"top":10,"left":30}
+    // 结束时的状态 targetJSON{"top":"30px","left":"5px"}
+    // 保存步长的 stepJSON{"top": (30-10)/totalTimes,"left": (5-30)/totalTimes}
+
+
+    function animate(elem,targetJSON,time,callback) {
+        var interval = window.navigator.userAgent.indexOf('MSIE') !== -1 ? 50 : 10;
+        // MSIE: MicroSoft Internet Explore
+
+
+        // 获取初始状态，并保存在startJSON里
+        var startJSON = {};// {"top" : 100,"left" : 100}
+        for(var k in targetJSON){
+            startJSON[k] = parseFloat(fetchComputedValue(elem,k));
+        }
+        // 运动执行的总次数 = 总时间 / 一次运动花费的时间（每隔多长时间运动一次）
+        var totalTimes = time / interval;
+
+        // 计算并保存每个属性变化的步长在stepJSON里
+        var stepJSON = {};
+        for(var m in targetJSON){
+            stepJSON[m] = (parseFloat(targetJSON[m]) - startJSON[m]) / totalTimes;
+        }
+        // 计数器，用于记录实际运动的次数
+        var count = 0;
+
+        var timer = setInterval(function () {
+            // 运动过程： 在初始状态上每次加步长
+            for(var n in startJSON){
+                startJSON[n] += stepJSON[n];
+                elem.style[n] = startJSON[n] + "px";
+            }
+            // 运动一次，计数器加 1
+            count++;
+            // 判断实际运动的次数是否等于应该运动的总次数，如果是则“拉终停表”
+            if(count === totalTimes){
+                // 拉终： 强行改变到终止状态
+                for(var y in targetJSON) {
+                    elem.style[y] = targetJSON[y] + "px";
+                }
+                // 停表： 清除定时器
+                clearInterval(timer);
+                // 执行回调函数，调用的时候传什么就执行什么
+                callback();
+            }
+        },interval);// 执行一次花费的时间
+    }
+
+    
+    function fetchComputedValue(ele,styles) {
+        if(getComputedStyle){
+//           backgroundColor -> background-color
+            styles = styles.replace(/([A-Z])/g,function (match,$1) {
+                return "-" + $1.toLowerCase();
+            });
+            return getComputedStyle(ele)[styles];
+        }else{
+//            background-color -> backgroundColor
+            styles = styles.replace(/\-([a-z])/g,function (match,$1) {
+                return $1.toUpperCase();
+            });
+            return ele.currentStyle[styles];
+        }
+    }
+
+    var oDiv = document.querySelector('div');
+
+    animate(oDiv,{"top":"100px","left":"300px"},2000,function () {
+        console.log("动画执行完了");
+    });
+</script>
+</body>
+</html>

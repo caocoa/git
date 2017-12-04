@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var starVal = 1;
+			var endVal = 100;
+			var ran = parseInt(Math.random()*(endVal-starVal+1))+starVal;
+			do{
+				nInput = parseInt(prompt("地雷在"+starVal+"~"+endVal+"之间"));
+				if(nInput === ran){
+					alert("你炸了");
+					break;
+				}else if(nInput < ran&&nInput >=starVal){
+					starVal = nInput;
+					alert("太小了");
+				}else if(nInput > ran&&nInput <=endVal){
+					endVal = nInput;
+					alert("太大了");
+				}else{
+					alert("不在范围内");
+				}
+				if(endVal - starVal === 2){
+					alert("你赢了，炸弹是"+ran);
+					break;
+				}
+			}while(true)
+		</script>
+	</body>
+</html>

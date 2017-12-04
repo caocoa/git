@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//			var re = /abc/g;
+			//			var reg = new RegExp('abc','g');
+			//			var demo = 'aaaaaaaaaaaaaaaaaabcbbbbbbbbbbccccbabc';
+			//			console.log(re.exec(demo));
+			//是一个数组，包含0元素，匹配的内容
+			//index，表示第一次匹配到是的下标
+			//input，表示需要匹配的字符串
+			//匹配不到，返回null
+			//			console.log(re.test(demo));
+			//返回true或者false
+
+			//集合和范围
+			//[abc],[0-9a-zA-Z],(12|as|QW)查找方括号之内的任意字符,竖线表示或
+			//			console.log(/[abc]/g.exec(22123addsedfr));
+			//[^123]查找方括号之外的任意字符
+			//元字符
+			//。代表一个字符
+
+			//			console.log(/\u6800/g.exec('栀子花'));
+
+			//			var input = prompt();
+			//			var reg = /^1[34578]\d{9}$/g;
+			//			if(reg.test(input)){
+			//				console.log("ok");
+			//			}else{
+			//				console.log("no");
+			//			}
+			//			var input = prompt();
+			//			var reg = /\w+(@qq|@163|@139)+.+(com|cn)$/g;
+			//			if(reg.test(input)){
+			//				console.log("ok");
+			//			}else{
+			//				console.log("no");
+			//			}
+			function putstar(n) {
+				
+				for(i = 1; i < n; i++) {
+					var space = "";
+					var star = "";
+					for(j = n-i;j > 0;j--){
+						space += " ";
+					}
+					for(k = 0; k < 2*i-1; k++) {
+						star += "*";
+					}
+					space += star;
+					console.log(space+"\n");
+				}	
+			}
+			putstar(5);
+		</script>
+	</body>
+
+</html>

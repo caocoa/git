@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组定义和遍历</title>
+</head>
+<body>
+<script>
+    var arr = [123,'haha',false,undefined,456];
+
+    // 数组遍历： 循环变量从0开始，到arr.length终止，取不到arr.length
+    // 防止i >= arr.length 发生数组下标溢出（越界）
+    for(var i = 0;i < arr.length; i++){
+        console.log(arr[i]);
+    }
+
+    // 数组数据有规律，赋值用循环 + push（）方法
+    var arr1 = [];
+    for(var j = 0;j < 5; j+=2){
+        arr1.push(j);
+    }
+    console.log(arr1);
+
+
+    console.log(typeof arr1);
+    // 要检测的引用数据类型实例 instanceof 检测的所属类型
+    console.log(arr1 instanceof Array);
+
+    function helloWorld(){console.log("HelloWorld");}
+    console.log(helloWorld instanceof Function);
+
+//    比较数组: 变量中存放的是指向同一内存地址则相等，否则不相等
+    var shuzu1 = [1,2,3];
+    var shuzu2 = shuzu1;
+    console.log(shuzu1 === shuzu2);
+
+    // push()方法 从尾部添加
+    console.log(shuzu1.push('hello','world'));// 5
+    console.log(shuzu1);
+
+    // 从尾部删除 pop()方法
+    console.log(shuzu1.pop());// world
+    console.log(shuzu1);
+
+    // 从头部添加 unshift()方法
+//    console.log(shuzu2);
+    console.log(shuzu2.unshift("happy","new","year"));// 7
+    console.log(shuzu2);
+
+    // 从头部删除 shift()方法
+    console.log(shuzu2.shift());// happy
+    console.log(shuzu2);
+
+//    join()方法: 把数组中的所有项转化并拼接成一个字符串
+    console.log(shuzu2.join(""));
+
+//    reverse()方法
+    console.log(shuzu2.reverse());
+
+//    slice()方法
+    console.log(shuzu2.slice(-4,-1));
+    console.log(shuzu2.slice(2,3));
+    console.log(shuzu2);
+
+//    sort()方法: 不传参数时会按照Unicode码从小到大排列
+    console.log(shuzu1.sort());
+    console.log(shuzu1);
+
+    var shuzu3 = [23,4,51,67,8,9];
+    console.log(shuzu3.sort(function (a,b) {
+        return b - a;// a - b递增；b - a递减
+    }));
+
+
+//    splice()方法： 在指定位置增、删、改
+    // 删除
+    console.log(shuzu3.splice(1,1));// [51]
+    console.log(shuzu3);
+    // 添加
+    console.log(shuzu3.splice(2,0,'hello')); // []空数组
+    console.log(shuzu3);
+    // 更改 替换
+    console.log(shuzu3.splice(2,3,"hi","world"));
+    console.log(shuzu3);
+
+    // concat()方法 添加或者连接
+    console.log(shuzu3.concat('bibibibi','hahahaha'));
+    console.log(shuzu3);// 数组本身不会改变
+
+    console.log(shuzu3.concat(shuzu2));
+    console.log(shuzu3);// 数组本身不会改变
+    console.log(shuzu2);// 数组本身不会改变
+
+    console.log(shuzu1.concat(['heyhey','goodbye']));
+    console.log(shuzu1);
+</script>
+</body>
+</html>

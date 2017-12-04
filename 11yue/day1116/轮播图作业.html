@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div{
+			width: 950px;
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+			margin: 0;
+		}
+		ul {
+			width: 3800px;
+			height: 300px;
+			margin: 0;
+			position: absolute;
+			margin: 0;
+		}
+		
+		li {
+			width: 950px;
+			height: 300px;
+			float: left;
+			list-style: none;
+			margin: 0;
+		}
+	</style>
+
+	<body>
+		<div>
+			<ul>
+				<li><img src="img/1.jpg" /></li>
+				<li><img src="img/2.jpg" /></li>
+				<li><img src="img/3.jpg" /></li>
+				<li><img src="img/4.jpg" /></li>
+			</ul>
+		</div>
+
+		<button>←</button>
+		<button>→</button>
+		<script>
+			var oButtons = document.querySelectorAll("button");
+			var oImg = document.querySelector("ul");
+			var count = 0;
+			
+			oButtons[0].onclick = function() {
+				count += 960;
+				oImg.style.marginLeft = count + "px";
+			};
+			oButtons[1].onclick = function() {
+				count -= 960;
+				oImg.style.marginLeft = count + "px";
+			};
+		</script>
+	</body>
+
+</html>

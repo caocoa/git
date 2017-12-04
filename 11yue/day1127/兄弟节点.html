@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function getClosestOnePreviousSibling(ele){
+				var prev = ele;
+				while(prev = prev.previousSibling){
+					prev = prev.previousSibling;
+					if(prev.nodeType === Node.ELEMENT_NODE) {
+							return prev;
+					}
+					
+				}
+				return null;
+			}
+		</script>
+	</body>
+</html>

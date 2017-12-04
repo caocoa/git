@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table,
+			tr,
+			th,
+			td {
+				border-collapse: collapse;
+				border: 1px solid #3ae;
+			}
+			
+			th,
+			td {
+				padding: 10px;
+			}
+			
+			a:visited {
+				color: #3ae;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			var stuHeight = [{
+					name: '甲',
+					height: '145'
+				},
+				{
+					name: '乙',
+					height: '175'
+				},
+				{
+					name: '丙',
+					height: '165'
+				},
+				{
+					name: '丁',
+					height: '185'
+				},
+				{
+					name: '戊',
+					height: '155'
+				},
+				{
+					name: '己',
+					height: '195'
+				}
+			];
+
+			function createTableHeader() {
+				var eleTr = document.createElement('tr');
+				var eleTh = document.createElement('th');
+				eleTh.innerHTML = 'Name';
+				eleTr.appendChild(eleTh);
+				eleTh = document.createElement('th');
+				var eleA = document.createElement('a');
+				eleA.href = '#';
+				eleA.innerHTML = 'Height';
+				eleA.onclick = sortToogle;
+				eleTh.appendChild(eleA);
+				eleTr.appendChild(eleTh);
+				return eleTr;
+			}
+			 var isSheng = true;// true表示升序，false表示降序
+			 
+			
+		</script>
+	</body>
+
+</html>

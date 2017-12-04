@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 500px;
+				height: 320px;
+			}
+			ul{
+				padding: 0;
+				list-style: none;
+				display: block;
+			}
+			ul li{
+				width: 80px;
+				height: 20px;
+				border: 2px solid #ccc;
+				float: left;
+			}
+			.adm li{
+				background-color: #aaa;
+			}
+		</style>
+	</head>
+	<body>	
+		<div>
+			
+		<ul class="adm">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		</div>
+		<button>交换</button>
+	<script>
+		var oUls = document.querySelectorAll("ul");
+		var oButton = document.querySelector("button");
+		for(i=0;i<oUls.length;i++){
+			if(i%2==0){
+				oUls[i].className = "adm";
+			}
+		}
+		oButton.onclick = function(){
+			for(i=0;i<oUls.length;i++){
+			if(i%2!=0){
+				oUls[i].className = "adm";
+			}else{
+			oUls[i].className = "";
+			}	
+		}
+		}
+	</script>	
+	</body>
+</html>

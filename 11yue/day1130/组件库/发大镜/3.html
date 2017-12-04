@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				margin: 0;
+				
+			}
+			section{
+				width: 350px;
+				height: 350px;
+				border: 1px solid #111;
+				margin: 100px;
+				position: relative;
+			}
+			aside{
+				width: 175px;
+				height: 175px;
+				background-color: rgba(0,155,58,.5);
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			article{
+				width: 400px;
+				height: 400px;
+				background: url(img/da.jpg) no-repeat;
+				position: absolute;
+				top: 100px;
+				left: 500px;
+				border: 1px solid #000;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<img src="img/xiao.jpg" />
+			<aside></aside>
+		</section>
+		<article></article>
+		<script>
+			var smallPic = document.querySelector('section');
+			var magnifier = document.querySelector('aside');
+			var bigPic = document.querySelector('article');
+			
+			var moveBorder1 = parseFloat(getComputedStyle(magnifier)['width']);
+			var moveBorder2 = parseFloat(getComputedStyle(bigPic)['width']);
+			var rate = moveBorder1 / moveBorder2;
+			
+			smallPic.onmouseover = function(){
+				magnifier.style.display = 'block';
+				bigPic.style.display = 'block';
+			}
+			smallPic.onmouseout = function(){
+				magnifier.style.display = 'none';
+				bigPic.style.display = 'none';
+			}
+			smallPic.onmousemove = function(event){
+				event = event ||window.event;
+				
+//				var delatX = event.offsetX;
+//				var delatY = event.offsetY;
+//				
+//				var scrollTop = document.style.scrollTop || document.documentElement.scrollTop;
+//				var scrollLeft= document.style.scrollLeft || document.documentElement.scrollLeft;
+//				
+				var x = event.clientX - this.offsetLeft - magnifier.clientHeight/2;
+				var y = event.clientY - this.offsetTop - magnifier.clientWidth/2;
+				
+				if(x<0){x=0;}
+				if(x>moveBorder1){x=moveBorder1;}
+				if(y<0){y=0;}
+				if(y>moveBorder1){y=moveBorder1;}
+				
+				magnifier.style.top = y + 'px';
+				magnifier.style.left = x + 'px';
+				
+				bigPic.style.backgroundPosition = -(x/rate) + 'px ' + -(y/rate) + 'px';
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

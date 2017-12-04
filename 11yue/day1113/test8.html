@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr=[71, 77, 67, 87, 67, 89, 88, 80, 79, 94];
+			var max = arr[1];
+			var count = 0
+			for(var i = 1; i < arr.length; i++) {
+				if(arr[i] >= max){
+					max = arr[i];
+					count = i;
+				}
+			}
+			console.log(max,count);
+			var min = arr[1];
+			
+			for(var i = 1; i < arr.length; i++) {
+				if(arr[i] <= min){
+					min = arr[i];
+					count = i;
+				}
+			}
+			console.log(min,count);
+
+		</script>
+	</body>
+</html>

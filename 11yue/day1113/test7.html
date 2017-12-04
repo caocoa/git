@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var arr=[71, 77, 67, 87, 67, 89, 88, 80, 79, 94];
+			var ping = 0;
+			for(var i = 0; i < arr.length; i++) {
+				ping = ping+arr[i];
+			}
+			ping = parseInt(ping/10);
+			for(var i = 0; i < arr.length; i++) {
+				if(arr[i] >= ping){
+					console.log(arr[i]);
+				}
+			}
+		</script>
+	</body>
+
+</html>

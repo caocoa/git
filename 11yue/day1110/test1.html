@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function jiecheng(x) {
+				var count = 1;
+				for(j = 1; j <= x; j++) {
+					count = count * j;
+				}
+				return count;
+			}
+
+			function qiuhe(y) {
+				var sum = 0;
+				var count;
+				for(i = 1; i <= y; i++) {
+					count = jiecheng(i);
+					sum = sum + count;
+				}
+				console.log(sum);
+			}
+			var input = parseInt(prompt());
+			qiuhe(input);
+		</script>
+	</body>
+</html>

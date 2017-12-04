@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			aside{
+				width: 20px;
+				height: 20px;
+				padding: 25px;
+				border: 1px solid #33AAEE;
+				border-radius: 10px;
+				background-color: #fff;
+				color: #33AAEE;
+				right: 10px;
+				bottom: 10px;
+				display: none;
+			}aside:hover{
+				background-color: #33AAEE;
+				color: #FFFF00;
+				
+			}
+			section{
+				width: 100px;
+				height: 3000px;
+			}
+		</style>
+	</head>
+	<body>
+		<section>111</section>
+		<aside>
+			return top
+		</aside>
+		<script>
+			var backToTop = document.querySelector('aside');
+			
+			backToTop.onclick = function(){
+				scrollAnimate(0,1000);
+			}
+			window.onscroll = function(){
+				var st = document.style.scrollTop ;
+				if(st>2000){
+					backToTop.style.display = 'block';
+				}else{
+					backToTop.style.display = 'none';
+				}
+			}
+		</script>
+	</body>
+</html>

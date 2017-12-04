@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				margin: 0;
+			}
+			
+			div {
+				width: 500px;
+				height: 500px;
+				border: 2px solid #ccc;
+				margin: 30px;
+				position: relative;
+			}
+			
+			section {
+				width: 80px;
+				height: 80px;
+				background-color: #00008B;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<section></section>
+		</div>
+
+		<script>
+			var oDiv = document.querySelector('div');
+			var oSection = document.querySelector('section');
+
+			oSection.onmousedown = function(event) {
+				event = event || window.event;
+
+				var deltaX = event.clientX - this.offsetLeft;
+				var deltaY = event.clientY - this.offsetTop;
+
+				oDiv.onmousemove = function(ev) {
+					ev = ev || window.event;
+					var x = ev.clientX - deltaX;
+					var y = ev.clientY - deltaY;
+
+					if(x <= 10) {
+						x = 0;
+					}
+					if(y <= 10) {
+						y = 0;
+					}
+
+					if(x > oDiv.clientWidth - oSection.clientWidth - 10) {
+						x = oDiv.clientWidth - oSection.clientWidth;
+					}
+					if(y > oDiv.clientHeight - oSection.clientHeight - 10) {
+						y = oDiv.clientHeight - oSection.clientHeight;
+					}
+
+					oSection.style.left = x + 'px';
+					oSection.style.top = y + 'px';
+				};
+			};
+			document.onmouseup = function() {
+				oDiv.onmousemove = null;
+			};
+		</script>
+	</body>
+
+</html>

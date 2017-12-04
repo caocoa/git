@@ -1,0 +1,16 @@
+.backtotop{
+      padding: 25px;
+      border: 1px solid #3ae;
+      border-radius: 10px;
+      background: #fff;
+      color: #3ae;
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      display: none;
+      font-size: 14px;
+    }
+    .backtotop:hover{
+      background: #3ae;
+      color: #fff;
+    }

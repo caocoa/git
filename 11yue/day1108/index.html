@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//			var hei = prompt("请输入身高（单位米）");
+			//			var wei = prompt("请输入体重（单位千克）");
+			//			var bmi = wei/Math.pow(hei,2);
+			//			if(bmi < 18.5){
+			//				alert("过轻");
+			//			}else if(bmi < 25){
+			//				alert("普通");
+			//			}else if(bmi < 28){
+			//				alert("较胖");
+			//			}else if(bmi < 32){
+			//				alert("肥胖");
+			//			}
+
+			//			var strInput = prompt("请输入你的爱好");
+			//			switch(strinput){
+			//				case"运动":
+			//				alert("人丑多作怪");
+			//				break;
+			//				case"读书":
+			//				alert("人丑，多读书也没用");
+			//				break;
+			//				case"旅游":
+			//				alert("人丑，就别出去吓唬人了");
+			//				break;
+			//				case"美食":
+			//				alert("人丑，还胖，没得救");
+			//				break;
+			//				default:
+			//				alert("");
+			//				break;
+			//			}
+			//循环体即便为空，循环变量也会改变
+			//			for(var i = 1;i < 100;i++){
+			//				console.log("第"+i+"只水饺");
+			//			}
+			//			console.log("到第"+ i +"只水饺时，睡着了");
+
+			//			for(var i = 3 ; i < 11 ; i+=4){
+			// 		 	console.log(i);
+			//			}
+
+			//			for(i=1;i<=48;i++){
+			//				if(48%i == 0){
+			//					console.log(i);
+			//				}
+			//			}
+
+			//			for(i = 100; i < 1000; i++) {
+			//				
+			//				var bai = parseInt(i / 100);
+			//				var i1 = i % 100;
+			//				var shi = parseInt(i1 / 10);
+			//				var i2 = i1 % 10;
+			//				var ge = parseInt(i2 / 1);
+			//				var he = Math.pow(bai, 3) + Math.pow(shi, 3) + Math.pow(ge, 3);
+			//				if(i == he) {
+			//					console.log(he);
+			//				}
+			//			}
+			//			var n = 0;
+			//			for(i = 1; i <= 1000; i++) {
+			//				n = n + i;
+			//			}
+			//			console.log(n);
+			//			var num = parseInt(prompt());
+			//			var n = 1;
+			//			for(i = 1; i<=num;i++){
+			//				n = n * i;
+			//			}console.log(n);
+			//			for(i = 1; i <= 9; i++) {
+			//				for(j = 1; j <= i; j++) {
+			//					document.write(j+"*"+i+"="+(i*j)+"\n");
+			//				}
+			//				document.write("<br>");
+			//			}
+			
+			for(i = 2; i <= 100; i++) {
+				var n = 0;
+				for(j = 1; j <= i; j++) {
+					if(i % j == 0) {
+						n++;
+					}
+
+				}
+				if(n == 2) {
+					console.log(i);
+				}
+			}
+			
+			
+		</script>
+	</body>
+
+</html>

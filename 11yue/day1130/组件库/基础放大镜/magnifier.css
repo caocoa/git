@@ -1,0 +1,26 @@
+.smallpic{
+      width: 350px;
+      height: 350px;
+      border: 1px solid #ccc;
+      margin: 100px;
+      position: relative;
+    }
+    .fangda{
+      width: 175px;
+      height: 175px;
+      background: rgba(0,155,58,.5);
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .bigpic{
+      width: 400px;
+      height: 400px;
+      background: url('./images/da.jpg') no-repeat;
+      position: absolute;
+      top: 100px;
+      left: 500px;
+      border: 1px solid #000;
+      display: none;
+    }

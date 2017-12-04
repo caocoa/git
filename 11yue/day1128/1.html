@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#a{
+				width: 600px;
+				height: 500px;
+				background-color: darkblue;
+			}
+			#b{
+				width: 540px;
+				height: 450px;
+				background-color: greenyellow;
+			}
+			#c{
+				width: 480px;
+				height: 400px;
+				background-color: royalblue;
+			}
+			#d{
+				width: 400px;
+				height: 350px;
+				background-color: lightslategray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="a">
+			<div id="b">
+				<div id="c">
+					<div id="d"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			document.getElementById('a').addEventListener('click', function(e) {
+				console.log('target:' + e.target.id
+
+					+
+					'&currentTarget:' + e.currentTarget.id
+
+				);
+			});
+			document.getElementById('b').addEventListener('click', function(e) {
+				console.log('target:' + e.target.id
+
+					+
+					'&currentTarget:' + e.currentTarget.id
+
+				);
+			});
+			document.getElementById('c').addEventListener('click', function(e) {
+				console.log('target:' + e.target.id
+
+					+
+					'&currentTarget:' + e.currentTarget.id
+
+				);
+			});
+			document.getElementById('d').addEventListener('click', function(e) {
+				console.log('target:' + e.target.id
+
+					+
+					'&currentTarget:' + e.currentTarget.id
+
+				);
+			});
+		</script>
+	</body>
+
+</html>

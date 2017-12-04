@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function rightchange(char,n){
+				var ch = char;
+				for(i=0;i<n;i++){
+					ch = ch.concat(ch.charAt(0));
+					ch.replace(ch.charAt(0),"");
+				}
+				console.log(ch);
+			}
+			rightchange("abcdefg",2)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				margin: 0;
+				
+			}
+			footer{
+				width: 96px;
+				height: 20px;
+				line-height: 20px;
+				border: 2px solid #3ae;
+				margin: 100px;
+				position: relative;
+				overflow: hidden;
+			}
+			footer ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+			}
+			footer ul li{
+				width: 20px;
+				height: 20px;
+				float: left;
+				margin: 0;
+				margin-left: 4px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<footer>
+			<ul>
+				<li style="background-color: red;" >甲</li>
+				<li style="background-color: blue;">乙</li>
+				<li style="background-color: green;">丙</li>
+				<li style="background-color: yellow;">丁</li>
+				<li style="background-color: chocolate;">戊</li>
+				<li style="background-color: pink;">己</li>
+			</ul>
+		</footer>
+		<script src="animate.js"></script>
+		<script>
+			var oUl = document.querySelector("footer ul");
+			var oLis = document.querySelectorAll("footer ul li");
+			var liLength = oLis.length;
+			
+			oUl.innerHTML += oUl.innerHTML;
+			
+			var indx = 0;
+			
+			function roll(){
+				indx++;
+				animate(oUl,{'left':-24 * indx},1000,'BounceEaseOut',function(){
+					if(indx>liLength-1){
+						indx = 0;
+						this.style.top = 0;
+					}
+				})
+			}
+			
+			var banner = setInterval(roll,3000);
+			oLis.onmouseover = function(){
+				clearInterval(banner)
+			}
+			oLis.onmouseout = function(){
+				banner;
+			}
+		</script>
+	</body>
+</html>

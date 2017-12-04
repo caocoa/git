@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>获取元素净位置</title>
+  <style>
+    body{margin: 0;}
+    header{
+      width: 700px;height: 500px;background: #0ff;
+      position: relative;
+      border: 3px solid #ccc;
+    }
+    section{
+      width: 640px;height: 460px;background: #ff0;
+      position: absolute;top: 30px;left:50px;
+      border: 1px solid #ccc;
+    }
+    aside{
+      width: 580px;height: 400px;background: #23f;
+      position: absolute;top: 20px;left: 60px;
+      border: 5px solid #ccc;
+    }
+    footer{
+      width: 500px;height: 300px;background: #17a;
+      position: absolute;top:90px; left: 80px;
+      border: 10px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <section>
+      <aside>
+        <footer></footer>
+      </aside>
+    </section>
+  </header>
+  <script>
+    var eleFooter = document.querySelector('footer');
+    // console.log(eleFooter);
+
+    // 如果一系列元素中有边框，不会影响里层元素净位置的值，因为offsetLeft和offsetTop都不会算border
+    function getPureTop(ele){
+      var pureTop = ele.offsetTop;
+      var currentEle = ele;
+  
+      while(currentEle = currentEle.offsetParent){
+        pureTop += currentEle.offsetTop;
+      }
+      return pureTop;
+    }
+    function getPureLeft(ele){
+      var pureLeft = ele.offsetLeft;
+      var currentEle = ele;
+
+      while (currentEle = currentEle.offsetParent) {
+        pureLeft += currentEle.offsetLeft;
+      }
+      return pureLeft;
+    }
+    console.log(getPureLeft(eleFooter), getPureTop(eleFooter));
+  </script>
+</body>
+</html>

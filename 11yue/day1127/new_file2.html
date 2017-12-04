@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="box1">
+
+			<p id="xiaoming">我是小明</p>
+			<span>nihao</span>
+		</div>
+			
+		<div id="box2">
+		</div>
+		<script>
+			var oDiv = document.querySelectorAll('div');
+			var oP = document.querySelector('#xiaoming');			
+			var oNew=document.querySelector('span');
+			oNew.innerHTML = 'name';
+			oDiv[1].appendChild(oP);
+			oDiv[1].insertBefore(oNew,oP);
+			oP.parentNode.removeChild(oP);
+		</script>
+	</body>
+
+</html>

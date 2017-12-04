@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var count1 = 0;
+			var count2 = 0;
+			var apple = 3;
+			var pear = 2;
+			var peach = 1;
+			//x=苹果数量，y=梨树量，z=桃子数量
+			for(x = 0;x <= 67;x++){
+				for(y = 0; y<=100-x;y++){
+					for(z = 0; z<=100-x-y;z++){
+						count1++;
+						if(x + y + z ==100&&apple*x +pear*y +z ==200){
+							console.log("苹果"+x+"梨"+y+"桃子"+z);
+							count2++;
+						}
+					
+				}
+				}
+			}
+			console.log(count1);
+			console.log(count2);
+		</script>
+	</body>
+</html>
